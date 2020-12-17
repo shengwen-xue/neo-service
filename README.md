@@ -15,7 +15,3 @@ springboot + mysql + activiti
 
 1.  git clone https://github.com/shengwen-xue/activiti-api.git
 2.  修改数据库配置
-
-#### 参与贡献
-
-1.  
