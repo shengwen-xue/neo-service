@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xsw.activitiapi.mapper.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xsw.activitiapi.model.entity.User">
+        <result column="user_name" property="userName"/>
+        <result column="passwords" property="passwords"/>
+        <result column="display_name" property="displayName"/>
+        <result column="phone" property="phone"/>
+        <result column="mailbox" property="mailbox"/>
+        <result column="ustatus" property="ustatus"/>
+        <!--<result column="locking" property="locking"/>-->
+        <result column="address" property="address"/>
+        <result column="remarks" property="remarks"/>
+        <result column="group_id" property="groupId"/>
+        <result column="sex" property="sex"/>
+        <result column="position" property="position"/>
+        <result column="systemLevel" property="systemLevel"/>
+        <result column="leaderId" property="leaderId"/>
+        <result column="projectId" property="projectId"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        user_name, passwords, display_name, phone, mailbox, ustatus, locking, address, remarks, group_id, sex, position, systemLevel, leaderId, projectId
+    </sql>
+
+    <select id="getUserInfo" resultType="com.xsw.activitiapi.model.dto.UserDTO">
+        SELECT
+            t_user.id as userId,
+            t_user.user_name as userName,
+            t_user.passwords as password,
+            t_user.display_name as displayName,
+            t_role.id as roleId,
+            t_role.role_name as roleName,
+            t_group.id as groupId,
+            t_group.group_name
+        FROM
+	      `t_user`
+        LEFT JOIN t_userRole ON t_user.id = t_userRole.user_id
+        LEFT JOIN t_role ON t_userRole.role_id = t_role.id
+        LEFT JOIN t_group ON t_role.group_id = t_group.id
+        WHERE
+	      t_user.id = #{userId}
+    </select>
+</mapper>
