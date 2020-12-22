@@ -1,6 +1,9 @@
 package com.xsw.activitiapi.controller;
 
 import com.xsw.activitiapi.service.ActivityService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.activiti.engine.RepositoryService;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
  * @author xueshengwen
  * @since 2020/12/17 14:30
  */
+@Api(tags = "activity")
 @RestController
 @RequestMapping(value = "/activity")
 public class ActivityController {
@@ -28,32 +32,41 @@ public class ActivityController {
     @Autowired
     private RepositoryService repositoryService;
 
+    @ApiOperation(value = "创建流程")
     @PostMapping("/createDeployment")
     public boolean createDeployment() {
         return activityService.createDeployment();
     }
 
+    @ApiOperation(value = "启动流程")
     @GetMapping("/startActivityDemo/{key}")
-    public boolean startActivityDemo(@PathVariable String key) {
+    public boolean startActivityDemo(@ApiParam(name = "流程编号", required = true)
+                                     @PathVariable String key) {
         return activityService.startActivityDemo(key);
     }
 
+    @ApiOperation(value = "代办列表")
     @GetMapping("/getTaskList")
     public boolean getTaskList() {
         return activityService.getTaskList();
     }
 
+    @ApiOperation(value = "提交流程")
     @GetMapping("/complete/{taskId}")
-    public boolean complete(@PathVariable String taskId) {
+    public boolean complete(@ApiParam(name = "任务ID", required = true)
+                            @PathVariable String taskId) {
         return activityService.complete(taskId);
     }
 
+    @ApiOperation(value = "删除流程")
     @DeleteMapping("/deleteProcessInstance/{runId}")
-    public boolean deleteProcessInstance(@PathVariable String runId) {
+    public boolean deleteProcessInstance(@ApiParam(name = "运行ID", required = true)
+                                         @PathVariable String runId) {
         return activityService.deleteProcessInstance(runId);
     }
 
-    @RequestMapping("/firstDemo")
+    @ApiOperation(value = "第一个工作流demo")
+    @GetMapping("/firstDemo")
     public void firstDemo() {
         //根据bpmn文件部署流程
         Deployment deployment = repositoryService.createDeployment().addClasspathResource("demo2.bpmn").deploy();

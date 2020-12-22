@@ -4,9 +4,9 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.xsw.activitiapi.model.entity.Role">
-        <result column="role_name" property="roleName" />
-        <result column="description" property="description" />
-        <result column="group_id" property="groupId" />
+        <result column="role_name" property="roleName"/>
+        <result column="description" property="description"/>
+        <result column="group_id" property="groupId"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
