@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/test")
 public class TestController {
 
-    @ApiOperation(value = "index")
+    @ApiOperation(value = "首页")
     @GetMapping(value = "/index")
     public String index() {
         return "111";
