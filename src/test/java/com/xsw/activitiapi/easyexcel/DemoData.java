@@ -13,6 +13,5 @@ import java.util.Date;
 @ToString
 public class DemoData {
     private String string;
-    private Date date;
     private Double doubleData;
 }
