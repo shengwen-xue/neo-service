@@ -29,7 +29,7 @@ spring:
   activiti:
     database-schema-update: true
     check-process-definitions: false
-#    process-definition-location-suffixes: **.bpmn
+    #    process-definition-location-suffixes: **.bpmn
     process-definition-location-prefix: classpath:/processes
   devtools:
     restart:

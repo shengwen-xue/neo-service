@@ -11,8 +11,9 @@ import org.activiti.engine.repository.Deployment;
 import org.activiti.engine.repository.ProcessDefinition;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
 
 /**
  * @author xueshengwen
@@ -23,13 +24,13 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/activity")
 public class ActivityController {
 
-    @Autowired
+    @Resource
     private ActivityService activityService;
-    @Autowired
+    @Resource
     private RuntimeService runtimeService;
-    @Autowired
+    @Resource
     private TaskService taskService;
-    @Autowired
+    @Resource
     private RepositoryService repositoryService;
 
     @ApiOperation(value = "创建流程")
