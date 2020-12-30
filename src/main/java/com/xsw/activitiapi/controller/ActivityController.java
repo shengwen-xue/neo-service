@@ -69,11 +69,11 @@ public class ActivityController {
     @ApiOperation(value = "第一个工作流demo")
     @GetMapping("/firstDemo")
     public void firstDemo() {
-        //根据bpmn文件部署流程
+        // 根据bpmn文件部署流程
         Deployment deployment = repositoryService.createDeployment().addClasspathResource("demo2.bpmn").deploy();
-        //获取流程定义
+        // 获取流程定义
         ProcessDefinition processDefinition = repositoryService.createProcessDefinitionQuery().deploymentId(deployment.getId()).singleResult();
-        //启动流程定义，返回流程实例
+        // 启动流程定义，返回流程实例
         ProcessInstance processInstance = runtimeService.startProcessInstanceById(processDefinition.getId());
         String processId = processInstance.getId();
         System.out.println("流程创建成功，当前流程实例ID：" + processId);
