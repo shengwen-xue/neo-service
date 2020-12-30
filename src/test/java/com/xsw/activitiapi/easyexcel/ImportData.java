@@ -9,5 +9,5 @@ import lombok.Data;
 @Data
 public class ImportData {
     private String name;
-    private Double doubleData;
+    private Double wage;
 }

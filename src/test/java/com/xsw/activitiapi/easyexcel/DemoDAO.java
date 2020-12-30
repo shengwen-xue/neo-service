@@ -22,7 +22,7 @@ public class DemoDAO {
         for (int i = 0; i < 10; i++) {
             ExportData exportData = new ExportData();
             exportData.setName("张三" + i);
-            exportData.setDoubleData(10d + i);
+            exportData.setWage(10d + i);
             list.add(exportData);
         }
         return list;
