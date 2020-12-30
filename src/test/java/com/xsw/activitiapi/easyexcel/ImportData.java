@@ -8,6 +8,13 @@ import lombok.Data;
  */
 @Data
 public class ImportData {
+    /**
+     * 姓名
+     */
     private String name;
+
+    /**
+     * 工资
+     */
     private Double wage;
 }
