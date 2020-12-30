@@ -13,13 +13,13 @@ import java.util.List;
  * @since 2020/12/16 10:17
  */
 @Slf4j
-public class DemoDataListener extends AnalysisEventListener<DemoData> {
+public class DemoDataListener extends AnalysisEventListener<ImportData> {
 
     /**
      * 每隔5条存储数据库，实际使用中可以3000条，然后清理list ，方便内存回收
      */
     private static final int BATCH_COUNT = 10;
-    List<DemoData> list = new ArrayList<>();
+    List<ImportData> list = new ArrayList<>();
 
     private DemoDAO demoDAO;
 
@@ -31,13 +31,13 @@ public class DemoDataListener extends AnalysisEventListener<DemoData> {
     /**
      * 这个每一条数据解析都会来调用
      *
-     * @param demoData        one row value. Is is same as {@link AnalysisContext#readRowHolder()}
+     * @param importData      one row value. Is is same as {@link AnalysisContext#readRowHolder()}
      * @param analysisContext
      */
     @Override
-    public void invoke(DemoData demoData, AnalysisContext analysisContext) {
-        log.info("解析到一条数据：{}", JSON.toJSONString(demoData));
-        list.add(demoData);
+    public void invoke(ImportData importData, AnalysisContext analysisContext) {
+        log.info("解析到一条数据：{}", JSON.toJSONString(importData));
+        list.add(importData);
         // 达到BATCH_COUNT了，需要去存储一次数据库，防止数据几万条数据在内存，容易OOM
         if (list.size() >= BATCH_COUNT) {
             batchSaveData();
