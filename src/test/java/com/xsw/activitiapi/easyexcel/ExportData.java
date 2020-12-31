@@ -9,8 +9,10 @@ import lombok.Data;
  */
 @Data
 public class ExportData {
+
     @ExcelProperty(value = "姓名", index = 0)
     private String name;
+
     @ExcelProperty(value = "工资", index = 1)
     private Double wage;
 }
