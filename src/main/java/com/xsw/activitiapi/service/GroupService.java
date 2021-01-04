@@ -2,7 +2,7 @@ package com.xsw.activitiapi.service;
 
 /**
  * <p>
- * 服务类
+ * 分组服务类
  * </p>
  *
  * @author xueshengwen
