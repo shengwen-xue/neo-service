@@ -12,6 +12,9 @@ import java.util.stream.Collectors;
 
 /**
  * Java stream
+ *
+ * @author xueshengwen
+ * @since 2020/12/22 13:40
  */
 public class Demo5 {
 
