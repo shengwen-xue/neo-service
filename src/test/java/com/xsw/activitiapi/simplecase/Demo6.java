@@ -1,6 +1,8 @@
 package com.xsw.activitiapi.simplecase;
 
 /**
+ * core Java
+ *
  * @author xueshengwen
  * @since 2020/12/24 11:09
  */

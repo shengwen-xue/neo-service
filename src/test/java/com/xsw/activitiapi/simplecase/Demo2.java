@@ -8,6 +8,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
+ * 拼接测试
+ *
  * @author xueshengwen
  * @since 2020/12/22 13:36
  */

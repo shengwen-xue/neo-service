@@ -8,6 +8,8 @@ import cn.hutool.extra.mail.MailUtil;
 import cn.hutool.http.HttpUtil;
 
 /**
+ * hutool工具类使用
+ *
  * @author xueshengwen
  * @since 2020/12/22 13:29
  */

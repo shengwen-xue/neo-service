@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 模拟数据库操作
+ *
  * @author xueshengwen
  * @since 2020/12/16 10:19
  */
