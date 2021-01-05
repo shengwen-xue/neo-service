@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * <p>
- * 服务实现类
+ * 用户角色服务实现类
  * </p>
  *
  * @author xueshengwen

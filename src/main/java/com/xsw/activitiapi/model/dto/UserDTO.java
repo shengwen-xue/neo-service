@@ -3,6 +3,8 @@ package com.xsw.activitiapi.model.dto;
 import lombok.Data;
 
 /**
+ * 用户dto
+ *
  * @author xueshengwen
  * @since 2020/12/18 13:31
  */

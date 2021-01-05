@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- *
+ * 角色
  * </p>
  *
  * @author xueshengwen
