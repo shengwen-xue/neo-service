@@ -47,13 +47,11 @@ public class QRCodeGenerator {
      * 生成二维码
      *
      * @param content  内容
-     * @param width    宽度
-     * @param height   高度
      * @param filePath 二维码生成存放路径
      * @throws WriterException
      * @throws IOException
      */
-    public static void generateQRCodeImage(String content, int width, int height, String filePath) throws WriterException, IOException {
+    public static void generateQRCodeImage(String content, String filePath) throws WriterException, IOException {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         BitMatrix bitMatrix = qrCodeWriter.encode(content, BarcodeFormat.QR_CODE, width, height, hints);
         Path path = FileSystems.getDefault().getPath(filePath);
@@ -63,7 +61,7 @@ public class QRCodeGenerator {
     public static void main(String[] args) {
         try {
             String level = hints.get(EncodeHintType.ERROR_CORRECTION).toString();
-            generateQRCodeImage("容错等级" + level, width, height, "D:/test.png");
+            generateQRCodeImage("容错等级" + level, "D:/test.png");
             Console.log("生成二维码done！");
         } catch (WriterException e) {
             e.printStackTrace();
