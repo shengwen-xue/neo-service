@@ -5,8 +5,6 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttTopic;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
-import java.util.concurrent.ScheduledExecutorService;
-
 /**
  * @author xueshengwen
  * @since 2021/1/20 16:16
@@ -19,7 +17,6 @@ public class Demo9 {
     private MqttConnectOptions mqttConnectOptions;
     private String userName = "admin";
     private String passWord = "admin";
-    private ScheduledExecutorService scheduledExecutorService;
 
     private void start() {
         try {
