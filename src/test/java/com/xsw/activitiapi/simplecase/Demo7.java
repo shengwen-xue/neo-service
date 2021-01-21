@@ -15,10 +15,10 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 public class Demo7 {
 
     public static void main(String[] args) {
-        String topic = "admin/1/ms/111222/2111";
+        String topic = "";
         String content = "这是发布端发布的数据";
         int qos = 1;
-        String broker = "tcp://www.baidu.com:1883";
+        String broker = "tcp://ip:1883";
         String userName = "admin";
         String password = "admin";
         String clientId = "admin:adminpub";

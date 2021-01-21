@@ -12,15 +12,15 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 public class Demo8 {
 
     public static void main(String[] args) {
-        String HOST = "tcp://www.baidu.com:1883";
-        String TOPIC = "admin/1/ap/111222/111";
+        String host = "tcp://ip:1883";
+        String topic = "";
         int qos = 1;
         String userName = "admin";
         String passWord = "admin";
-        String clientId = "admin:adminsub";
+        String clientId = "admin:admin999";
         try {
             // host为主机名，test为clientId即连接MQTT的客户端ID，一般以客户端唯一标识符表示，MemoryPersistence设置clientId的保存形式，默认为以内存保存
-            MqttClient client = new MqttClient(HOST, clientId, new MemoryPersistence());
+            MqttClient client = new MqttClient(host, clientId, new MemoryPersistence());
             // MQTT的连接设置
             MqttConnectOptions options = new MqttConnectOptions();
             // 设置是否清空session,这里如果设置为false表示服务器会保留客户端的连接记录，这里设置为true表示每次连接到服务器都以新的身份连接
@@ -52,7 +52,7 @@ public class Demo8 {
             });
             client.connect(options);
             //订阅消息
-            client.subscribe(TOPIC, qos);
+            client.subscribe(topic, qos);
         } catch (Exception e) {
             e.printStackTrace();
         }
