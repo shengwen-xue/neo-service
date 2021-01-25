@@ -12,11 +12,11 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 public class Demo8 {
 
     public static void main(String[] args) {
-        String host = "tcp://:1883";
-        String topic = "cc33/#";
+        String host = "tcp://47.108.21.90:1883";
+        String topic = "cc352/#";
         int qos = 1;
-        String userName = "cc352a15aac511e";
-        String passWord = "cc352";
+        String userName = "cc35";
+        String passWord = "cc35";
         String clientId = "cc352:cc3529";
         try {
             // host为主机名，test为clientId即连接MQTT的客户端ID，一般以客户端唯一标识符表示，MemoryPersistence设置clientId的保存形式，默认为以内存保存
