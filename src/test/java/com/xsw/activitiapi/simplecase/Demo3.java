@@ -51,10 +51,18 @@ public class Demo3 {
         return map.values().size();
     }
 
+    public static String addBinary(String a, String b) {
+        int x = Integer.valueOf(a.trim(), 2);
+        int y = Integer.valueOf(b.trim(), 2);
+        return Integer.toBinaryString(x + y);
+    }
+
     public static void main(String[] args) {
         int hello_world = lengthOfLastWord("Hello World");
         System.out.println(hello_world);
         int[] nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
         System.out.println(removeDuplicates(nums));
+        String s = addBinary("1010101010", "1010101");
+        System.out.println(s);
     }
 }
