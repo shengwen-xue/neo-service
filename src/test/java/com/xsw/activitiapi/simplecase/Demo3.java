@@ -64,5 +64,7 @@ public class Demo3 {
         System.out.println(removeDuplicates(nums));
         String s = addBinary("1010101010", "1010101");
         System.out.println(s);
+        System.out.println(10 / 3 + 10 % 3);
+        System.out.println((10 + 3 - 1) / 3);
     }
 }
