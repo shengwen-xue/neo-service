@@ -17,15 +17,15 @@ public class Demo11 {
         int age = scanner.nextInt();
         System.out.printf("姓名: %s, 年龄: %d\n", name, age);
 
-        int[] ns = { 28, 12, 89, 73, 65, 18, 96, 50, 8, 36 };
+        int[] ns = {28, 12, 89, 73, 65, 18, 96, 50, 8, 36};
         // 排序前:
         System.out.println(Arrays.toString(ns));
         for (int i = 0; i < ns.length - 1; i++) {
-            for (int j = 0; j < ns.length - i -1; j++) {
-                if(ns[j] < ns[j+1]) {
+            for (int j = 0; j < ns.length - i - 1; j++) {
+                if (ns[j] < ns[j + 1]) {
                     int tmp = ns[j];
-                    ns[j] = ns[j+1];
-                    ns[j+1] = tmp;
+                    ns[j] = ns[j + 1];
+                    ns[j + 1] = tmp;
                 }
             }
         }
