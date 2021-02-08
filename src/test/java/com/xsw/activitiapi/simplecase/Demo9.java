@@ -10,13 +10,13 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
  * @since 2021/1/20 16:16
  */
 public class Demo9 {
-    private static final String HOST = "tcp://ip.com:1883";
-    private static final String TOPIC = "admin/jll/property/ms/00000001/updata";
-    private static final String clientid = "admin:admin125";
+    private static final String HOST = "tcp://:1883";
+    private static final String TOPIC = "";
+    private static final String clientid = "";
     private MqttClient mqttClient;
     private MqttConnectOptions mqttConnectOptions;
-    private String userName = "admin";
-    private String passWord = "admin";
+    private String userName = "";
+    private String passWord = "";
 
     private void start() {
         try {

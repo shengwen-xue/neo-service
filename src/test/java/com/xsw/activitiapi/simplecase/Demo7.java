@@ -15,13 +15,13 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 public class Demo7 {
 
     public static void main(String[] args) {
-        String topic = "3/v1/mote/fe00752b/registerToMote";
+        String topic = "";
         String content = "这是发布端发布的数据";
         int qos = 1;
-        String broker = "tcp://ip:1883";
-        String userName = "c";
-        String password = "cc352c3";
-        String clientId = "admin:adminpub";
+        String broker = "tcp://:1883";
+        String userName = "";
+        String password = "";
+        String clientId = ":";
         // 内存存储
         MemoryPersistence persistence = new MemoryPersistence();
 
