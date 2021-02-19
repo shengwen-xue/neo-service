@@ -17,12 +17,12 @@ public class Demo13 {
     private static String secretKey = "";
     private static String signal = "";
 
-    private static String startTime = "2021-01-01 00:00:00";
-    private static String endTime = "2021-01-17 24:00:00";
+    private static String startTime = "2021-02-01 00:00:00";
+    private static String endTime = "2021-02-17 00:00:00";
 
     private static String ivS = "426e26e82c704e59";
-    private static String tokenUrl = "http://cn-apis.zifisense.com/teamcms/ws/auth_v1/auth_token/query/getWanAccessToken";
-    private static String dataUrl = "http://cn-apis.zifisense.com/teamcms/ws/zeta_v1/wan_ms/query/" + deviceId + "/getMsUploadDataByDate?access_token=";
+    private static String tokenUrl = "http:///auth_v1/auth_token/query/getWanAccessToken";
+    private static String dataUrl = "http:///zeta_v1/wan_ms/query/" + deviceId + "/getMsUploadDataByDate?access_token=";
 
 
     public static void main(String[] args) {
