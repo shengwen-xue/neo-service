@@ -9,13 +9,10 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * 订阅端
- *
  * @author xueshengwen
- * @since 2021/1/20 13:55
+ * @since 2021/2/24 11:28
  */
-public class Demo8 {
-
+public class Demo18 {
 
     public static void main(String[] args) {
         List<String> list = new CopyOnWriteArrayList<>();

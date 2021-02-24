@@ -16,12 +16,12 @@ public class Demo7 {
 
     public static void main(String[] args) {
         String topic = "";
-        String content = "这是发布端发布的数据";
+        String content = "";
         int qos = 1;
-        String broker = "tcp://:1883";
+        String broker = "";
         String userName = "";
         String password = "";
-        String clientId = ":";
+        String clientId = "";
         // 内存存储
         MemoryPersistence persistence = new MemoryPersistence();
 
