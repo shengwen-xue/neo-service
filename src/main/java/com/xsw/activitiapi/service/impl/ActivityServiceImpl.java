@@ -39,8 +39,8 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
     @Override
-    public boolean startActivityDemo(String key) {
-        ProcessInstance processInstance = runtimeService.startProcessInstanceByKey(key);
+    public boolean startActivityDemo(String name) {
+        ProcessInstance processInstance = runtimeService.startProcessInstanceByKey(name);
         String id = processInstance.getId();
         System.out.println("流程id =" + id);
         return true;

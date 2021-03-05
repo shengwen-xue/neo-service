@@ -14,5 +14,11 @@ import java.util.List;
  */
 public interface UserService {
 
+    /**
+     * 获取用户信息
+     *
+     * @param userId 用户id
+     * @return 用户列表
+     */
     List<UserDTO> getUserInfo(String userId);
 }

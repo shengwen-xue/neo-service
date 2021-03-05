@@ -36,6 +36,5 @@ public class UserServiceImpl implements UserService {
             BeanUtils.copyProperties(user, userDTO);
             return userDTO;
         }).collect(Collectors.toList());
-        // return userMapper.getUserInfo(userId);
     }
 }

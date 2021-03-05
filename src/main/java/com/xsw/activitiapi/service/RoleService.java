@@ -9,5 +9,4 @@ package com.xsw.activitiapi.service;
  * @since 2020-12-18
  */
 public interface RoleService {
-
 }

@@ -9,20 +9,21 @@ package com.xsw.activitiapi.service;
  * @since 2020/12/17 14:31
  */
 public interface ActivityService {
+
     /**
      * 注册流程
      *
-     * @return
+     * @return 标识
      */
     boolean createDeployment();
 
     /**
      * 启动流程
      *
-     * @param test bpmn名称
-     * @return
+     * @param name bpmn名称
+     * @return 标识
      */
-    boolean startActivityDemo(String test);
+    boolean startActivityDemo(String name);
 
     /**
      * 获取待办
@@ -35,7 +36,7 @@ public interface ActivityService {
      * 提交
      *
      * @param taskId 任务编号
-     * @return
+     * @return 标识
      */
     boolean complete(String taskId);
 
@@ -43,7 +44,7 @@ public interface ActivityService {
      * 根据流程id直接结束流程
      *
      * @param runId 运行编号
-     * @return
+     * @return 标识
      */
     boolean deleteProcessInstance(String runId);
 }
