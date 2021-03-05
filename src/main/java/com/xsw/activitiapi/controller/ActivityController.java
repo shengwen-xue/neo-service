@@ -21,7 +21,7 @@ import javax.annotation.Resource;
  * @author xueshengwen
  * @since 2020/12/17 14:30
  */
-@Api(tags = "activity")
+@Api(tags = "工作流")
 @RestController
 @RequestMapping(value = "/activity")
 public class ActivityController {

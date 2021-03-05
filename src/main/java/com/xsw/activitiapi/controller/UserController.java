@@ -19,7 +19,7 @@ import java.util.List;
  * @author xueshengwen
  * @since 2020/12/18 13:29
  */
-@Api(tags = "user")
+@Api(tags = "用户")
 @RestController
 @RequestMapping("/user")
 public class UserController {

@@ -7,6 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ActivityApiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ActivityApiApplication.class, args);
+        try {
+            System.setProperty("spring.devtools.restart.enabled", "false");
+            SpringApplication.run(ActivityApiApplication.class, args);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

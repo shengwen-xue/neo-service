@@ -1,12 +1,14 @@
 server:
   port: 9999
+  servlet:
+    context-path: /activiti-api
 
 # 数据源配置
 spring:
   datasource:
-    url: jdbc:mysql://10.160.8.194:3306/activiti?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true
-    username: root
-    password: 123456
+    url: jdbc:mysql://58.246.64.11:20140/aden_test2?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true
+    username: aden
+    password: liyaojing@123
     driver-class-name: com.mysql.cj.jdbc.Driver
     druid:
       initial-size: 5
