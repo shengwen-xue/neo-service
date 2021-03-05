@@ -18,11 +18,11 @@ public class Demo13 {
     private static String secretKey = "";
     private static String signal = "";
 
-    private static String startTime = "2021-02-26 00:00:00";
-    private static String endTime = "2021-02-27 00:00:00";
+    private static String startTime = "2021-03-01 00:00:00";
+    private static String endTime = "2021-03-03 10:59:59";
 
     private static String ivS = "426e26e82c704e59";
-    private static String tokenUrl = "/auth_v1/auth_token/query/getWanAccessToken";
+    private static String tokenUrl = "auth_v1/auth_token/query/getWanAccessToken";
     private static String dataUrl = "zeta_v1/wan_ms/query/" + deviceId + "/getAppDataByDate?access_token=";
 
 
