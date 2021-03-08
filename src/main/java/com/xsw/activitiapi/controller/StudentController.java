@@ -26,12 +26,6 @@ public class StudentController {
     @Resource
     private StudentService studentService;
 
-    @ApiOperation(value = "首页")
-    @GetMapping(value = "/index")
-    public String index() {
-        return "111";
-    }
-
     @ApiOperation(value = "获取学生列表")
     @GetMapping(value = "/listStudent")
     public ResultBody listStudent() {
