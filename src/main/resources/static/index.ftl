@@ -5,9 +5,7 @@
     <title>首页</title>
 </head>
 <body>
-<form action="">
-    验证码<input type="text" name="code" placeholder="请输入验证码..." width="100px" height="50px">
-    <img src="/captcha" width="130px" height="48px" />
-</form>
+验证码<input type="text" name="code" placeholder="请输入验证码...">
+<img src="/code/image" width="130px" height="48px"/>
 </body>
 </html>
