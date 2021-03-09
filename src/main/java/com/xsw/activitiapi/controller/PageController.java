@@ -17,7 +17,7 @@ import java.io.OutputStream;
 @Controller
 public class PageController {
 
-    public final static String SESSION_KEY_IMAGE_CODE = "SESSION_KEY_IMAGE_CODE";
+    private final static String SESSION_KEY_IMAGE_CODE = "SESSION_KEY_IMAGE_CODE";
 
     @GetMapping(value = "/")
     public String index() {
@@ -45,6 +45,5 @@ public class PageController {
         lineCaptcha.write(out);
         out.flush();
         out.close();
-
     }
 }
