@@ -35,12 +35,17 @@ public class PageController {
 
         //定义图形验证码的长、宽、验证码字符数、干扰元素个数
         LineCaptcha lineCaptcha = CaptchaUtil.createLineCaptcha(100, 38);
+        // 验证码
+        String code = lineCaptcha.getCode();
+        // 验证码是否正确
+        boolean verify = lineCaptcha.verify("11111");
         System.out.println(lineCaptcha.getCode());
         //将验证码放到HttpSession里面
         request.getSession().setAttribute(SESSION_KEY_IMAGE_CODE, lineCaptcha.getCode());
 
-        //图形验证码写出，可以写出到文件，也可以写出到流
-        //输出浏览器
+        // 图形验证码写出，可以写出到文件，也可以写出到流
+        lineCaptcha.write("D:/line.png");
+        // 输出浏览器
         OutputStream out = response.getOutputStream();
         lineCaptcha.write(out);
         out.flush();
