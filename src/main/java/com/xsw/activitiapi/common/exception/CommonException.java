@@ -20,10 +20,12 @@ public class CommonException extends RuntimeException {
      * 标识位
      */
     private Boolean flag;
+
     /**
      * 响应消息
      */
     private String message;
+
     /**
      * 响应数据
      */

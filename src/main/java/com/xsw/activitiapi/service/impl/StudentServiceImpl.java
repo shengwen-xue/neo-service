@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 学生服务实现类
@@ -24,6 +25,7 @@ import java.util.List;
 public class StudentServiceImpl implements StudentService {
 
     private static final List<Student> STUDENT_LIST = new LinkedList<>();
+
     static {
         for (int i = 0; i < 10; i++) {
             STUDENT_LIST.add(new Student("Tom" + i, 11 + i, "86+11" + i, "上海第" + i + "街道"));
@@ -37,21 +39,24 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public StudentVO getStudent(String name) {
-        if(StringUtils.isBlank(name)){
+        if (StringUtils.isBlank(name)) {
             throw new CommonException(false, BusinessEnum.PARAMETER_IS_EMPTY.getMessage());
         }
 
-        if(CollectionUtils.isEmpty(STUDENT_LIST)){
+        if (CollectionUtils.isEmpty(STUDENT_LIST)) {
             throw new CommonException(false, BusinessEnum.COLLECTION_IS_EMPTY.getMessage());
         }
 
-        StudentVO studentVO = new StudentVO();
+        StudentVO studentVO = null;
 
         for (Student student : STUDENT_LIST) {
-            if(name.equals(student.getName())){
+            if (name.equals(student.getName())) {
                 studentVO.setName(student.getName());
                 studentVO.setAddr(student.getAddr());
             }
+        }
+        if (Objects.isNull(studentVO)) {
+            throw new CommonException(false, BusinessEnum.NOT_FOUND_STUDENT.getMessage());
         }
         return studentVO;
     }

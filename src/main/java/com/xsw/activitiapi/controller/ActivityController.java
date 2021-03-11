@@ -21,7 +21,7 @@ import javax.annotation.Resource;
  * @author xueshengwen
  * @since 2020/12/17 14:30
  */
-@Api(tags = "工作流")
+@Api(tags = "工作流相关接口")
 @RestController
 @RequestMapping(value = "/activity")
 public class ActivityController {
@@ -69,7 +69,7 @@ public class ActivityController {
     }
 
     @ApiOperation(value = "第一个工作流demo")
-    @GetMapping("/firstDemo")
+    @GetMapping(value = "/firstDemo")
     public void firstDemo() {
         // 根据bpmn文件部署流程
         Deployment deployment = repositoryService.createDeployment().addClasspathResource("demo2.bpmn").deploy();

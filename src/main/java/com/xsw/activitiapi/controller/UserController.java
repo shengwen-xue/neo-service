@@ -19,16 +19,16 @@ import java.util.List;
  * @author xueshengwen
  * @since 2020/12/18 13:29
  */
-@Api(tags = "用户")
+@Api(tags = "用户相关接口")
 @RestController
-@RequestMapping("/user")
+@RequestMapping(value = "/user")
 public class UserController {
 
     @Resource
     private UserService userService;
 
     @ApiOperation(value = "用户信息")
-    @GetMapping("/userInfo/{userId}")
+    @GetMapping(value = "/userInfo/{userId}")
     public List<UserDTO> userInfo(@ApiParam(name = "userId", value = "用户ID", required = true)
                                   @PathVariable String userId) {
         return userService.getUserInfo(userId);

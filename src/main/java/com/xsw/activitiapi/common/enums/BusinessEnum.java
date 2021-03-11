@@ -1,10 +1,14 @@
 package com.xsw.activitiapi.common.enums;
 
+import io.swagger.models.auth.In;
+
 /**
+ * 业务枚举
+ *
  * @author xueshengwen
  * @since 2021/3/4 11:44
  */
-public enum BusinessEnum implements IExceptionEnum {
+public enum BusinessEnum implements IException {
 
     NOT_FOUND_USER(10001, "未查询到该用户"),
 
@@ -16,17 +20,17 @@ public enum BusinessEnum implements IExceptionEnum {
 
     COLLECTION_IS_EMPTY(10005, "查询集合为空");
 
-    private final int code;
+    private final Integer code;
 
     private final String message;
 
-    BusinessEnum(int code, String message) {
+    BusinessEnum(Integer code, String message) {
         this.code = code;
         this.message = message;
     }
 
     @Override
-    public int getCode() {
+    public Integer getCode() {
         return code;
     }
 
