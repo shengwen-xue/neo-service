@@ -14,8 +14,6 @@ import java.io.Serializable;
  */
 @Data
 @ApiModel
-@AllArgsConstructor
-@NoArgsConstructor
 public class StudentVO implements Serializable {
 
     @ApiModelProperty(value = "姓名")
