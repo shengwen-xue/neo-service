@@ -12,7 +12,8 @@ public final class TestConstants {
 
     public static final String COMMON_URL = "https://www.xxx.com";
 
-    private TestConstants() {
+    public static final String ILLUMINANCE = "光照度";
 
+    private TestConstants() {
     }
 }
