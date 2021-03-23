@@ -39,6 +39,8 @@ spring:
   freemarker:
     template-loader-path: classpath:/static
     suffix: .ftl
+  profiles:
+    active: service
 
 #mybatis-plus:
 #  mapper-locations: classpath:/mapper.xml/*.xml

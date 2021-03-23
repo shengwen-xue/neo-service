@@ -21,4 +21,8 @@ public interface UserService {
      * @return 用户列表
      */
     List<UserDTO> getUserInfo(String userId);
+
+    String test1();
+
+    String test2();
 }

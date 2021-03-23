@@ -5,7 +5,10 @@ import com.xsw.activitiapi.mapper.UserMapper;
 import com.xsw.activitiapi.model.dto.UserDTO;
 import com.xsw.activitiapi.model.entity.User;
 import com.xsw.activitiapi.service.UserService;
+import com.xsw.activitiapi.utils.TestUtils;
+import com.xsw.activitiapi.utils.TestUtils2;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -36,5 +39,15 @@ public class UserServiceImpl implements UserService {
             BeanUtils.copyProperties(user, userDTO);
             return userDTO;
         }).collect(Collectors.toList());
+    }
+
+    @Override
+    public String test1() {
+        return TestUtils.init();
+    }
+
+    @Override
+    public String test2() {
+        return TestUtils2.init();
     }
 }

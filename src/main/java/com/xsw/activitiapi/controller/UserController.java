@@ -33,4 +33,16 @@ public class UserController {
                                   @PathVariable String userId) {
         return userService.getUserInfo(userId);
     }
+
+    @ApiOperation(value = "测试1")
+    @GetMapping(value = "/test1")
+    public String test1() {
+        return userService.test1();
+    }
+
+    @ApiOperation(value = "测试2")
+    @GetMapping(value = "/test2")
+    public String test2() {
+        return userService.test2();
+    }
 }
