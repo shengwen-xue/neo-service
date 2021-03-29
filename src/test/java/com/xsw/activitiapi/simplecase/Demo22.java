@@ -7,9 +7,12 @@ package com.xsw.activitiapi.simplecase;
 public class Demo22 {
 
     public static void main(String[] args) {
-        String s = new String("111");
-        String str = "111";
-        System.out.println(s == str);
-        System.out.println(s.equals(str));
+        StringBuilder stringBuilder = new StringBuilder("");
+        StringBuilder stringBuilder1 = new StringBuilder();
+        stringBuilder.append("0");
+        stringBuilder1.append("1");
+
+        System.out.println(stringBuilder);
+        System.out.println(stringBuilder1);
     }
 }
