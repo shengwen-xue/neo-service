@@ -1,9 +1,6 @@
 package com.xsw.activitiapi.simplecase;
 
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author xueshengwen
@@ -29,11 +26,18 @@ public class Demo22 {
         String s1 = list.get(offset);
 
         String[] strings = Arrays.copyOfRange(array, list.indexOf(s), list.indexOf(s1));
-        List<String> list1 = Arrays.asList(strings);
+        List<String> strList = Arrays.asList(strings);
+        List<String> list1 = new LinkedList<>(strList);
 
         System.out.println("删除后：" + list1);
         list.clear();
         list = list1;
-        System.out.println(list);
+        list.addAll(list1);
+        System.out.println("添加后：" + list);
+
+        list.sort(Comparator.naturalOrder());
+        System.out.println("升序后：" + list);
+        list.sort(Comparator.reverseOrder());
+        System.out.println("降序后：" + list);
     }
 }
