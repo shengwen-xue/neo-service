@@ -1,5 +1,8 @@
 package com.xsw.activitiapi.simplecase;
 
+import com.sun.org.apache.regexp.internal.RE;
+import com.sun.org.apache.regexp.internal.REUtil;
+
 import java.util.*;
 
 /**
@@ -7,6 +10,11 @@ import java.util.*;
  * @since 2021/3/24 15:09
  */
 public class Demo22 {
+
+    public static void test() {
+        RE re = REUtil.createRE("", RE.MATCH_CASEINDEPENDENT);
+        System.out.println("RE:" + re.getMatchFlags());
+    }
 
     public static void main(String[] args) {
         int offset = 10;
@@ -39,5 +47,7 @@ public class Demo22 {
         System.out.println("升序后：" + list);
         list.sort(Comparator.reverseOrder());
         System.out.println("降序后：" + list);
+
+        test();
     }
 }
