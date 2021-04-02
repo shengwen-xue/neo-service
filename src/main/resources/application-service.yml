@@ -1,2 +1,8 @@
 # 测试
 host: https:www.baidu.com
+
+
+mqtt:
+  addr: 127.0.0.1
+  projectName: api-name
+  url: http://${mqtt.addr}.${mqtt.projectName}/

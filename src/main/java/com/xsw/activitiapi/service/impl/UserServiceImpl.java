@@ -5,6 +5,7 @@ import com.xsw.activitiapi.mapper.UserMapper;
 import com.xsw.activitiapi.model.dto.UserDTO;
 import com.xsw.activitiapi.model.entity.User;
 import com.xsw.activitiapi.service.UserService;
+import com.xsw.activitiapi.utils.Test;
 import com.xsw.activitiapi.utils.TestUtils;
 import com.xsw.activitiapi.utils.TestUtils2;
 import org.springframework.beans.BeanUtils;
@@ -28,6 +29,8 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     private UserMapper userMapper;
+    @Autowired
+    private Test test;
 
     @Override
     public List<UserDTO> getUserInfo(String userId) {
@@ -49,5 +52,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public String test2() {
         return TestUtils2.init();
+    }
+
+    @Override
+    public String test3() {
+        return test.test();
     }
 }

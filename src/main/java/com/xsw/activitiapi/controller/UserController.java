@@ -45,4 +45,10 @@ public class UserController {
     public String test2() {
         return userService.test2();
     }
+
+    @ApiOperation(value = "测试3")
+    @GetMapping(value = "/test3")
+    public String test3() {
+        return userService.test3();
+    }
 }
