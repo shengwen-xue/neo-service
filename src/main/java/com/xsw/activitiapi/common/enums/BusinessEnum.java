@@ -1,7 +1,5 @@
 package com.xsw.activitiapi.common.enums;
 
-import io.swagger.models.auth.In;
-
 /**
  * 业务枚举
  *
@@ -23,6 +21,33 @@ public enum BusinessEnum implements IException {
     private final Integer code;
 
     private final String message;
+
+    public static BusinessEnum getBusinessEnum(Integer code) {
+        for (BusinessEnum businessEnum : BusinessEnum.values()) {
+            if (code.equals(businessEnum.getCode())) {
+                return businessEnum;
+            }
+        }
+        return null;
+    }
+
+    public static String getEnumCode(Integer code) {
+        for (BusinessEnum businessEnum : BusinessEnum.values()) {
+            if (code.equals(businessEnum.getCode())) {
+                return businessEnum.getMessage();
+            }
+        }
+        return null;
+    }
+
+    public static Integer getEnumName(String name) {
+        for (BusinessEnum businessEnum : BusinessEnum.values()) {
+            if (name.equals(businessEnum.getMessage())) {
+                return businessEnum.getCode();
+            }
+        }
+        return null;
+    }
 
     BusinessEnum(Integer code, String message) {
         this.code = code;
