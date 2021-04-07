@@ -45,6 +45,6 @@ spring:
 #mybatis-plus:
 #  mapper-locations: classpath:/mapper.xml/*.xml
 mybatis:
-  mapper-locations: classpath:/mapper.xml/*.xml
+  mapper-locations: classpath:/mapper/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl

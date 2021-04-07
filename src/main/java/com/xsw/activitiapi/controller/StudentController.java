@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
- * 学生
+ * 学生控制器
  *
  * @author xueshengwen
  * @since 2020/12/17 13:50
