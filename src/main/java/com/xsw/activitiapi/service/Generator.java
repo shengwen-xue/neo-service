@@ -17,7 +17,7 @@ public class Generator {
 
     public static void main(String[] args) throws Exception {
         //MBG执行过程中的警告信息
-        List<String> warnings = new ArrayList<String>();
+        List<String> warnings = new ArrayList<>();
         //生成代码重复时，是否覆盖源代码
         boolean override = false;
         InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("generatorConfig.xml");
