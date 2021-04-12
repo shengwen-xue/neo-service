@@ -24,6 +24,10 @@ public class PersonController {
     @Resource
     private PersonService personService;
 
+
+
+
+
     @ApiOperation(value = "批量插入")
     @GetMapping(value = "/batchInsert")
     public ResultBody batchInsert() {
