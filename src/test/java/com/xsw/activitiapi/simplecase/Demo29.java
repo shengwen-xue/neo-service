@@ -13,7 +13,7 @@ import java.util.Map;
  */
 public class Demo29 {
 
-    public static void deleteElement(Integer... number) {
+    private static void deleteElement(Integer... number) {
         System.out.println(number + "删除成功");
     }
 
