@@ -27,5 +27,7 @@ public class Demo30 {
         System.out.println(stack.search("李四"));
 
         System.out.println(stack.size());
+
+        stack.stream().forEach(System.out::print);
     }
 }
