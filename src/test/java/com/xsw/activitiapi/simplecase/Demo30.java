@@ -16,13 +16,14 @@ public class Demo30 {
 
         System.out.println(stack);
 
-        stack.pop();
-
-        System.out.println("返回栈顶的元素，并且将该栈顶元素出栈:" + stack);
-
-//        stack.peek();
+//        stack.pop();
 //
-//        System.out.println("返回栈顶的元素，但不弹出该栈顶元素:" + stack);
+//        System.out.println("返回栈顶的元素，并且将该栈顶元素出栈:" + stack);
+
+        if (!stack.isEmpty()) {
+            String peek = stack.peek();
+            System.out.println("返回栈顶的元素，但不弹出该栈顶元素:" + peek);
+        }
 
         System.out.println(stack.search("李四"));
 
