@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.xsw</groupId>
-    <artifactId>activiti-api</artifactId>
+    <artifactId>neo-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>activiti-api</name>
+    <name>neo-service</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

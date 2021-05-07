@@ -1,7 +1,7 @@
 server:
   port: 9999
   servlet:
-    context-path: /activiti-api
+    context-path: /neo-service
 
 # 数据源配置
 spring:

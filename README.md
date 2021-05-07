@@ -1,5 +1,5 @@
 # 介绍(introduction)
-### activiti简单的demo
+### 简单的demo
 
 # 技术栈(Technologies)
 <ul>
@@ -27,8 +27,8 @@
 ```java 
 IDEA编辑器配置Maven、jdk环境、Lombok插件 
 git clone https://github.com/shengwen-xue/activiti-api.git 
-修改数据源找到src下的ActivityApiApplication.java右键run启动 
-启动成功后在浏览器输入http://localhost:9999/activiti-api/swagger-ui.html 操作swagger文档 
+修改数据源找到src下的NeoServiceApplication.java右键run启动 
+启动成功后在浏览器输入http://localhost:9999/neo-service/swagger-ui.html 操作swagger文档 
 ```
 
 
