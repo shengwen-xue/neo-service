@@ -1,13 +1,11 @@
 package com.xsw.activitiapi.service.impl;
 
-import com.xsw.activitiapi.mapper.PersonMapper;
 import com.xsw.activitiapi.model.entity.Person;
 import com.xsw.activitiapi.service.PersonService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -20,9 +18,6 @@ import java.util.Date;
 @Slf4j
 @Service
 public class PersonServiceImpl implements PersonService {
-
-    @Resource
-    private PersonMapper personMapper;
 
     @Transactional(rollbackFor = Exception.class)
     @Override
@@ -41,7 +36,6 @@ public class PersonServiceImpl implements PersonService {
             person.setEmail(i + "@aliyun.com");
             person.setCreateTime(new Date());
             person.setUpdateTime(new Date());
-            count += personMapper.insert(person);
         }
         long endTime = System.currentTimeMillis();
         System.out.println("耗时：" + (endTime - startTime));

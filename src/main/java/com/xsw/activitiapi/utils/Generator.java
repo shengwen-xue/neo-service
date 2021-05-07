@@ -1,4 +1,4 @@
-package com.xsw.activitiapi.service;
+package com.xsw.activitiapi.utils;
 
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;

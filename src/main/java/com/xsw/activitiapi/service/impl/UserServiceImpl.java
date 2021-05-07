@@ -1,7 +1,6 @@
 package com.xsw.activitiapi.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.xsw.activitiapi.mapper.UserMapper;
 import com.xsw.activitiapi.model.dto.UserDTO;
 import com.xsw.activitiapi.model.entity.User;
 import com.xsw.activitiapi.service.UserService;
@@ -27,21 +26,20 @@ import java.util.stream.Collectors;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Resource
-    private UserMapper userMapper;
     @Autowired
     private Test test;
 
     @Override
     public List<UserDTO> getUserInfo(String userId) {
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("id", userId);
-        List<User> userList = userMapper.selectList(queryWrapper);
-        return userList.stream().map(user -> {
-            UserDTO userDTO = new UserDTO();
-            BeanUtils.copyProperties(user, userDTO);
-            return userDTO;
-        }).collect(Collectors.toList());
+//        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+//        queryWrapper.eq("id", userId);
+//        List<User> userList = userMapper.selectList(queryWrapper);
+//        return userList.stream().map(user -> {
+//            UserDTO userDTO = new UserDTO();
+//            BeanUtils.copyProperties(user, userDTO);
+//            return userDTO;
+//        }).collect(Collectors.toList());
+        return null;
     }
 
     @Override
