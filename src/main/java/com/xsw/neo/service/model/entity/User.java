@@ -1,66 +1,43 @@
 package com.xsw.neo.service.model.entity;
 
-import lombok.Data;
+public class User {
+    private Integer id;
 
-import java.io.Serializable;
+    private String username;
 
-/**
- * <p>
- * 用户
- * </p>
- *
- * @author xueshengwen
- * @since 2020-12-18
- */
-@Data
-public class User implements Serializable {
+    private String password;
 
-    /**
-     * 用户账号
-     */
-    private String userName;
+    private String tel;
 
-    /**
-     * 密码
-     */
-    private String passwords;
+    public Integer getId() {
+        return id;
+    }
 
-    /**
-     * 用户显示名称
-     */
-    private String displayName;
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-    /**
-     * 电话
-     */
-    private String phone;
+    public String getUsername() {
+        return username;
+    }
 
-    /**
-     * 邮箱
-     */
-    private String mailbox;
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
+    }
 
-    /**
-     * 状态
-     */
-    private String ustatus;
+    public String getPassword() {
+        return password;
+    }
 
-    /**
-     * 地址
-     */
-    private String address;
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
+    }
 
-    private String remarks;
+    public String getTel() {
+        return tel;
+    }
 
-    private Integer groupId;
-
-    private String sex;
-
-    private String position;
-
-    private Integer systemLevel;
-
-    private Integer leaderId;
-
-    private Integer projectId;
+    public void setTel(String tel) {
+        this.tel = tel == null ? null : tel.trim();
+    }
 }

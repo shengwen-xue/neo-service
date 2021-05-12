@@ -31,11 +31,4 @@ public class StudentController {
     public ResultBody listStudent() {
         return ResultBody.SUCCESS(studentService.listStudent());
     }
-
-    @ApiOperation(value = "获取学生信息")
-    @GetMapping(value = "/getStudent")
-    public ResultBody getStudent(@RequestParam(value = "name")
-                                 @ApiParam(value = "姓名", name = "name", required = true) String name) {
-        return ResultBody.SUCCESS(studentService.getStudent(name));
-    }
 }
