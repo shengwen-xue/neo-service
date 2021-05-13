@@ -1,9 +1,11 @@
 package com.xsw.neo.service;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(exclude = {org.activiti.spring.boot.SecurityAutoConfiguration.class})
+@SpringBootApplication
+@MapperScan("com.xsw.neo.service.mapper")
 public class NeoServiceApplication {
 
     public static void main(String[] args) {
