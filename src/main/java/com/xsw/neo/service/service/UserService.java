@@ -1,6 +1,7 @@
 package com.xsw.neo.service.service;
 
 import com.xsw.neo.service.model.entity.User;
+import com.xsw.neo.service.model.param.UserQueryParam;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ public interface UserService {
      *
      * @return 用户列表
      */
-    List<User> listUser();
+    List<User> listUser(UserQueryParam userQueryParam);
 
     /**
      * 新增用户
