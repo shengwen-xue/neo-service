@@ -20,61 +20,61 @@
 //@Configuration
 //public class DruidDBConfig {
 //
-//    @Value("${spring.datasource.url}")
+//    @Value("${spring.datasource.datasource2.url}")
 //    private String dbUrl;
 //
-//    @Value("${spring.datasource.username}")
+//    @Value("${spring.datasource.datasource2.username}")
 //    private String username;
 //
-//    @Value("${spring.datasource.password}")
+//    @Value("${spring.datasource.datasource2.password}")
 //    private String password;
 //
-//    @Value("${spring.datasource.driver-class-name}")
+//    @Value("${spring.datasource.datasource2.driver-class-name}")
 //    private String driverClassName;
 //
-//    @Value("${spring.datasource..druid.initial-size}")
+//    @Value("${spring.datasource.datasource2.druid.initial-size}")
 //    private int initialSize;
 //
-//    @Value("${spring.datasource.druid.min-idle}")
+//    @Value("${spring.datasource.datasource2.druid.min-idle}")
 //    private int minIdle;
 //
-//    @Value("${spring.datasource.druid.max-active}")
+//    @Value("${spring.datasource.datasource2.druid.max-active}")
 //    private int maxActive;
 //
-//    @Value("${spring.datasource.druid.max-wait}")
+//    @Value("${spring.datasource.datasource2.druid.max-wait}")
 //    private int maxWait;
 //
-//    @Value("${spring.datasource.druid.time-between-eviction-runs-millis}")
+//    @Value("${spring.datasource.datasource2.druid.time-between-eviction-runs-millis}")
 //    private int timeBetweenEvictionRunsMillis;
 //
-//    @Value("${spring.datasource.druid.min-evictable-idle-time-millis}")
+//    @Value("${spring.datasource.datasource2.druid.min-evictable-idle-time-millis}")
 //    private int minEvictableIdleTimeMillis;
 //
-//    @Value("${spring.datasource.druid.validation-query}")
+//    @Value("${spring.datasource.datasource2.druid.validation-query}")
 //    private String validationQuery;
 //
-//    @Value("${spring.datasource.druid.test-while-idle}")
+//    @Value("${spring.datasource.datasource2.druid.test-while-idle}")
 //    private boolean testWhileIdle;
 //
-//    @Value("${spring.datasource.druid.test-on-borrow}")
+//    @Value("${spring.datasource.datasource2.druid.test-on-borrow}")
 //    private boolean testOnBorrow;
 //
-//    @Value("${spring.datasource.druid.test-on-return}")
+//    @Value("${spring.datasource.datasource2.druid.test-on-return}")
 //    private boolean testOnReturn;
 //
-//    @Value("${spring.datasource.druid.pool-prepared-statements}")
+//    @Value("${spring.datasource.datasource2.druid.pool-prepared-statements}")
 //    private boolean poolPreparedStatements;
 //
-//    @Value("${spring.datasource.druid.max-pool-prepared-statement-per-connection-size}")
+//    @Value("${spring.datasource.datasource2.druid.max-pool-prepared-statement-per-connection-size}")
 //    private int maxPoolPreparedStatementPerConnectionSize;
 //
-//    @Value("${spring.datasource.druid.filter}")
+//    @Value("${spring.datasource.datasource2.druid.filter}")
 //    private String filter;
 //
-//    @Value("${spring.datasource.druid.connection-properties}")
+//    @Value("${spring.datasource.datasource2.druid.connection-properties}")
 //    private String connectionProperties;
 //
-//    @Value("${spring.datasource.druid.use-global-data-source-stat}")
+//    @Value("${spring.datasource.datasource2.druid.use-global-data-source-stat}")
 //    private String useGlobalDataSourceStat;
 //
 //    //声明其为Bean实例

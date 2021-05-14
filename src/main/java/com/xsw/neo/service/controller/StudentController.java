@@ -1,15 +1,13 @@
 package com.xsw.neo.service.controller;
 
 import com.xsw.neo.service.common.result.ResultBody;
+import com.xsw.neo.service.model.entity.Student;
 import com.xsw.neo.service.service.StudentService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -27,9 +25,15 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    @ApiOperation(value = "获取学生列表")
+    @ApiOperation(value = "学生列表")
     @GetMapping(value = "/listStudent")
     public ResultBody listStudent() {
         return ResultBody.SUCCESS(studentService.listStudent());
+    }
+
+    @ApiOperation(value = "新增学生")
+    @PostMapping(value = "/saveStudent")
+    public ResultBody saveStudent(@RequestBody Student student) {
+        return ResultBody.SUCCESS(studentService.saveStudent(student));
     }
 }

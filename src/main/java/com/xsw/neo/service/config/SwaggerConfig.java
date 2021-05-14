@@ -46,7 +46,7 @@ public class SwaggerConfig {
                 // 描述
                 .description("Neo-Service Doc")
                 // 条款地址（不可见）
-                .termsOfServiceUrl("http://www.baidu.com")
+                .termsOfServiceUrl("https://github.com/shengwen-xue")
                 // 作者信息
                 .contact("xue-sheng-wen")
                 // 版本号

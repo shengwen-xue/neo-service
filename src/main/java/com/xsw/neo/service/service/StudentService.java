@@ -18,4 +18,12 @@ public interface StudentService {
      * @return 学生列表
      */
     List<Student> listStudent();
+
+    /**
+     * 新增学生
+     *
+     * @param student 学生
+     * @return 影响对象
+     */
+    Integer saveStudent(Student student);
 }

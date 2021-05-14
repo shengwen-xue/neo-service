@@ -8,7 +8,7 @@ package com.xsw.neo.service.common.enums;
  */
 public enum BusinessEnum implements IException {
 
-    NOT_FOUND_USER(10001, "未查询到该用户"),
+    CANNOT_INSERT_THE_SAME_ID(10001, "不能插入相同的ID"),
 
     NOT_FOUND_STUDENT(10002, "未查询到该学生"),
 
