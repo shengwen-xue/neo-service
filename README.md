@@ -17,7 +17,7 @@
     <li>commons-pool2 2.4.2</li>
     <li>fastjson 1.2.62</li>
     <li>gson 2.8.5</li>
-    <li>mqttv3 1.2.0</li>
+    <li><s>mqttv3 1.2.0</s></li>
     <li>freemarker</li>
     <li>jacoco 0.8.3</li>
 </ul>
@@ -28,7 +28,7 @@
 IDEA编辑器配置Maven、jdk环境、Lombok插件 
 git clone https://github.com/shengwen-xue/neo-service.git
 修改数据源找到src下的NeoServiceApplication.java右键run启动 
-启动成功后在浏览器输入http://localhost:9999/neo-service/swagger-ui.html 操作swagger文档 
+启动成功后在浏览器输入http://localhost:9999/neo-service/swagger-ui.html 或者http://localhost:9999/neo-service/doc.html 操作文档 
 ```
 
 
