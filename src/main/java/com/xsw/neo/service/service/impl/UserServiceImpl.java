@@ -8,6 +8,7 @@ import com.xsw.neo.service.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Objects;
@@ -30,6 +31,7 @@ public class UserServiceImpl implements UserService {
         return userMapper.selectByExample(null);
     }
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public Integer saveUser(User user) {
         User dbUser = userMapper.selectByPrimaryKey(user.getId());
