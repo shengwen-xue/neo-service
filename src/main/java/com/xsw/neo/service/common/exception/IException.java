@@ -1,4 +1,4 @@
-package com.xsw.neo.service.common.enums;
+package com.xsw.neo.service.common.exception;
 
 /**
  * 异常接口

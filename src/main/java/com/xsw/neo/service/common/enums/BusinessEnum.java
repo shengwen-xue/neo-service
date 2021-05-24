@@ -1,5 +1,7 @@
 package com.xsw.neo.service.common.enums;
 
+import com.xsw.neo.service.common.exception.IException;
+
 /**
  * 业务枚举
  *
