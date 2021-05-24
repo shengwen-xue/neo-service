@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 /**
  * 学生服务接口类
@@ -39,5 +40,10 @@ public class StudentServiceImpl implements StudentService {
             throw new CommonException(false, BusinessEnum.CANNOT_INSERT_THE_SAME_ID.getMessage());
         }
         return studentMapper.insertSelective(student);
+    }
+
+    @Override
+    public Student findStudentInfo(Integer id) {
+        return Optional.ofNullable(studentMapper.selectByPrimaryKey(id)).orElse(new Student());
     }
 }

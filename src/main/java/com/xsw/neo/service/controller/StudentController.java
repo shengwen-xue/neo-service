@@ -36,4 +36,10 @@ public class StudentController {
     public ResultBody saveStudent(@RequestBody Student student) {
         return ResultBody.SUCCESS(studentService.saveStudent(student));
     }
+
+    @ApiOperation(value = "获取学生信息")
+    @PostMapping(value = "/findStudentInfo")
+    public ResultBody findStudentInfo(@RequestParam(value = "id") Integer id) {
+        return ResultBody.SUCCESS(studentService.findStudentInfo(id));
+    }
 }

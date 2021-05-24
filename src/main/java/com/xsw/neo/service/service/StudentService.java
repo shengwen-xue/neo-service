@@ -26,4 +26,12 @@ public interface StudentService {
      * @return 影响对象
      */
     Integer saveStudent(Student student);
+
+    /**
+     * 获取学生信息
+     *
+     * @param id 学生id
+     * @return 学生信息
+     */
+    Student findStudentInfo(Integer id);
 }

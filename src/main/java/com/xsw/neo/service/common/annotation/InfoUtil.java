@@ -18,8 +18,4 @@ public class InfoUtil {
             }
         }
     }
-
-    public static void main(String[] args) {
-        getFruitInfo(Student2.class);
-    }
 }

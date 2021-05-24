@@ -24,7 +24,7 @@ public class DataSourceConfig {
     private DataSource2Properties dataSource2Properties;
 
     @Bean(name = "dataSource1")
-    @Primary
+
     public DataSource dataSource1(){
         log.info("dataSource1初始化....");
         HikariDataSource dataSource = new HikariDataSource();
@@ -36,6 +36,7 @@ public class DataSourceConfig {
     }
 
     @Bean(name = "dataSource2")
+    @Primary
     public DataSource dataSource2(){
         log.info("dataSource2初始化....");
         HikariDataSource dataSource = new HikariDataSource();
