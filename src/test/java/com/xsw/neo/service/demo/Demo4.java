@@ -23,7 +23,7 @@ public class Demo4 {
         list.add(student2);
         list.add(student3);
         try {
-            ExcelUtils.getInstance().exportObjects2Excel(list, Student2.class, true, "student", true,  "D:\\1111\\student2-en.xlsx", "zh-cn");
+            ExcelUtils.getInstance().exportObjects2Excel(list, Student2.class, true, "student", true, "D:\\1111\\student2-en.xlsx", "zh-cn");
         } catch (Excel4jException e) {
             e.printStackTrace();
         } catch (IOException e) {

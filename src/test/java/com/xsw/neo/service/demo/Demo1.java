@@ -17,12 +17,12 @@ public class Demo1 {
     private Calculator calculator = new Calculator();
 
     @Test
-    public void testAdd(){
+    public void testAdd() {
         Assert.assertEquals(30, calculator.add(10, 20));
     }
 
     @Test
-    public void testSub(){
+    public void testSub() {
         Assert.assertEquals(10, calculator.sub(20, 10));
     }
 }

@@ -25,7 +25,7 @@ public class DataSourceConfig {
 
     @Bean(name = "dataSource1")
 
-    public DataSource dataSource1(){
+    public DataSource dataSource1() {
         log.info("dataSource1初始化....");
         HikariDataSource dataSource = new HikariDataSource();
         dataSource.setJdbcUrl(dataSource1Properties.getUrl());
@@ -37,7 +37,7 @@ public class DataSourceConfig {
 
     @Bean(name = "dataSource2")
     @Primary
-    public DataSource dataSource2(){
+    public DataSource dataSource2() {
         log.info("dataSource2初始化....");
         HikariDataSource dataSource = new HikariDataSource();
         dataSource.setJdbcUrl(dataSource2Properties.getUrl());

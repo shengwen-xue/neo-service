@@ -24,7 +24,7 @@ public class Demo29 {
         numbers.add(1);
         numbers.add(2);
 
-        numbers.forEach(item->{
+        numbers.forEach(item -> {
             deleteElement(item);
         });
     }

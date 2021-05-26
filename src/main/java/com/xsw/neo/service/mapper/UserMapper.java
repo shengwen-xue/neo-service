@@ -2,7 +2,9 @@ package com.xsw.neo.service.mapper;
 
 import com.xsw.neo.service.model.entity.User;
 import com.xsw.neo.service.model.entity.UserExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {

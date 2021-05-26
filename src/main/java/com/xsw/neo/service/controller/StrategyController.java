@@ -30,7 +30,7 @@ public class StrategyController {
 
     @ApiOperation(value = "获取策略模式")
     @GetMapping(value = "/getStrategy")
-    public void getStrategy(){
+    public void getStrategy() {
         FastStrategy fastStrategy = new FastStrategy();
         Context context = new Context(fastStrategy);
         context.contextInterface();
@@ -38,7 +38,7 @@ public class StrategyController {
 
     @ApiOperation(value = "获取策略模式根据类型")
     @GetMapping(value = "/getStrategyByType")
-    public void getStrategyByType(@RequestParam(value = "type") String type){
+    public void getStrategyByType(@RequestParam(value = "type") String type) {
         FastStrategy fastStrategy = new FastStrategy();
         NormalStrategy normalStrategy = new NormalStrategy();
         SlowStrategy slowStrategy = new SlowStrategy();
@@ -50,7 +50,7 @@ public class StrategyController {
         map.put("SLOW", slowStrategy);
         map.put("SMOOTH", smoothStrategy);
 
-        if(map.containsKey(type)){
+        if (map.containsKey(type)) {
             Strategy strategy = map.get(type);
             strategy.run();
         }
