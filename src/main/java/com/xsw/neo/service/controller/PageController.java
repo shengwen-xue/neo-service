@@ -26,21 +26,21 @@ public class PageController {
 
     @GetMapping("/code/image")
     public void createCode(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        //设置response响应
+        // 设置response响应
         response.setCharacterEncoding("UTF-8");
         response.setHeader("Pragma", "No-cache");
         response.setHeader("Cache-Control", "no-cache");
         response.setDateHeader("Expires", 0);
         response.setContentType("image/jpeg");
 
-        //定义图形验证码的长、宽、验证码字符数、干扰元素个数
+        // 定义图形验证码的长、宽、验证码字符数、干扰元素个数
         LineCaptcha lineCaptcha = CaptchaUtil.createLineCaptcha(100, 38);
         // 验证码
         String code = lineCaptcha.getCode();
         // 验证码是否正确
         boolean verify = lineCaptcha.verify("11111");
         System.out.println(lineCaptcha.getCode());
-        //将验证码放到HttpSession里面
+        // 将验证码放到HttpSession里面
         request.getSession().setAttribute(SESSION_KEY_IMAGE_CODE, lineCaptcha.getCode());
 
         // 图形验证码写出，可以写出到文件，也可以写出到流
