@@ -65,6 +65,11 @@ public class Demo8 {
             }
         }
 
+        map.forEach((key, value) -> {
+            System.out.println("key:" + key);
+            System.out.println("value:" + value);
+        });
+
         Integer result = 0;
 
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
