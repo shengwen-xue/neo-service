@@ -1,9 +1,11 @@
 package com.xsw.neo.service.demo;
 
+import cn.hutool.core.lang.Console;
 import com.google.common.collect.Maps;
 import lombok.Data;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -33,12 +35,9 @@ public class Demo8 {
                 if (split[count] == split[j]) {
 
                 }
-
             }
 
-
             char[] arr = new char[split.length - 1];
-
 
             count++;
             if (count == split.length) {
@@ -88,11 +87,22 @@ public class Demo8 {
 
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
 
+        int[] arr = new int[m + n];
+        if (nums1.length > 0) {
+            for (int i = 0; i < nums1.length; i++) {
+                arr[i] = nums1[i];
+            }
 
-        System.out.println();
+            int index = arr.length / 2;
+            for (int i = index; i < nums2.length + index; i++) {
+                arr[i] = nums2[i - index];
+            }
+        }
 
+        Arrays.sort(arr);
+
+        Console.log(arr);
     }
-
 
     public static void main(String[] args) {
 //        while (true) {
@@ -131,7 +141,7 @@ public class Demo8 {
 //        System.out.println("head：" + head);
 
         int[] arr = {2, 2, 1};
-        int[] arr1 = {2, 2, 1};
+        int[] arr1 = {4, 5, 9};
         merge(arr, 3, arr1, 3);
     }
 }
