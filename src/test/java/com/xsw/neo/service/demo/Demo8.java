@@ -1,6 +1,7 @@
 package com.xsw.neo.service.demo;
 
 import com.google.common.collect.Maps;
+import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,6 +82,18 @@ public class Demo8 {
     }
 
 
+    public static ListNode deleteDuplicates(ListNode head) {
+        return null;
+    }
+
+    public static void merge(int[] nums1, int m, int[] nums2, int n) {
+
+
+        System.out.println();
+
+    }
+
+
     public static void main(String[] args) {
 //        while (true) {
 //            System.out.println("请输入一个字符串:");
@@ -98,7 +111,39 @@ public class Demo8 {
 //                }
 //            }
 //        }
-        Integer[] arr = {2, 2, 1, 1, 4, 4, 7};
-        System.out.println(findOneNum(arr));
+
+//        Integer[] arr = {2, 2, 1, 1, 4, 4, 7};
+//        System.out.println(findOneNum(arr));
+
+//        ListNode head = new ListNode(0);
+//
+//        ListNode fistNode = new ListNode(1);
+//        ListNode secondNode = new ListNode(2);
+//        ListNode thirdNode = new ListNode(3);
+//
+//        head.val = 1;
+//        head.setNext(fistNode);
+//        fistNode.setNext(secondNode);
+//        secondNode.setNext(thirdNode);
+//
+//        System.out.println("thirdNode的值为：" + head.getNext().getNext().getNext().getVal());
+//        System.out.println("head的值为：" + head.getVal());
+//        System.out.println("head：" + head);
+
+        int[] arr = {2, 2, 1};
+        int[] arr1 = {2, 2, 1};
+        merge(arr, 3, arr1, 3);
+    }
+}
+
+@Data
+class ListNode {
+
+    int val;
+
+    ListNode next;
+
+    ListNode(int x) {
+        val = x;
     }
 }
