@@ -7,6 +7,13 @@ package com.xsw.neo.service.demo;
 public class Demo10 {
 
     public static void main(String[] args) {
+        Thread thread = new Thread("thread1");
+
+        thread.start();
+
+        thread.run();
+
+        String name = thread.getName();
 
     }
 }
