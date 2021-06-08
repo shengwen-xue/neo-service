@@ -1,6 +1,7 @@
 package com.xsw.neo.service.demo;
 
 import java.util.concurrent.Callable;
+import java.util.concurrent.Executor;
 
 /**
  * 多线程的四种实现方式
@@ -21,6 +22,14 @@ public class Demo10 {
         CallableDemo callableDemo = new CallableDemo();
         String call = callableDemo.call();
         System.out.println(call);
+
+        ExecutorDemo executorDemo = new ExecutorDemo();
+        executorDemo.execute(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });
     }
 }
 
@@ -79,5 +88,15 @@ class CallableDemo implements Callable<String> {
                     ",currentThreadName:" + Thread.currentThread().getName());
         }
         return "SUCCESS";
+    }
+}
+
+class ExecutorDemo implements Executor {
+
+    @Override
+    public void execute(Runnable command) {
+        for (int i = 0; i < 5; i++) {
+            System.out.println("e:" + i + ",currentThreadName:" + Thread.currentThread().getName());
+        }
     }
 }
