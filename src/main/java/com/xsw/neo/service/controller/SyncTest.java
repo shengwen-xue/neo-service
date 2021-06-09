@@ -6,12 +6,17 @@ package com.xsw.neo.service.controller;
  */
 public class SyncTest {
 
+    private Integer count = 0;
+
     public synchronized void syncTest(Thread thread) {
         try {
             System.out.println("thread name:" + thread.getName() + "获取了锁。");
+            System.out.println("thread name:" + thread.getName() + "操作的count=" + count);
+            count++;
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
+            System.out.println("thread name:" + thread.getName() + "操作后的count=" + count);
             System.out.println("thread name:" + thread.getName() + "释放了锁。");
         }
     }

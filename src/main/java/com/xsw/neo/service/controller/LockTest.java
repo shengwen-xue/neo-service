@@ -11,15 +11,20 @@ public class LockTest {
 
     private Lock lock = new ReentrantLock();
 
-    public void test(Thread thread) {
+    private int count = 0;
 
+    public void test(Thread thread) {
+        // 获取锁
         lock.lock();
 
         try {
             System.out.println("thread name:" + thread.getName() + "获取了锁。");
+            System.out.println("thread name:" + thread.getName() + "操作的count=" + count);
+            count++;
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
+            System.out.println("thread name:" + thread.getName() + "操作后的count=" + count);
             System.out.println("thread name:" + thread.getName() + "释放了锁。");
             lock.unlock();
         }
