@@ -14,8 +14,6 @@ public class XxlJobDemoHandler {
     @XxlJob(value = "demoJobHandler")
     public ReturnT<String> demoJobHandler(String param) {
         System.out.println(param);
-
-
         return ReturnT.SUCCESS;
     }
 }
