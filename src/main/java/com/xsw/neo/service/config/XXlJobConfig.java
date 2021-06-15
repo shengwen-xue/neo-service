@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Bean;
 @Configuration
 public class XXlJobConfig {
 
-    @Value("${xxl.job.admin.addresses}")
+    @Value("${xxl.job.executor.addresses}")
     private String adminAddresses;
 
     @Value("${xxl.job.executor.appname}")
@@ -41,7 +41,7 @@ public class XXlJobConfig {
         log.info(">>>>>>>>>>> xxl-job config init  初始化 >>>>>>>>>>>");
         XxlJobSpringExecutor xxlJobSpringExecutor = new XxlJobSpringExecutor();
         xxlJobSpringExecutor.setAdminAddresses(adminAddresses);
-        xxlJobSpringExecutor.setAppName(appName);
+        xxlJobSpringExecutor.setAppname(appName);
         xxlJobSpringExecutor.setIp(ip);
         xxlJobSpringExecutor.setPort(port);
         xxlJobSpringExecutor.setAccessToken(accessToken);
