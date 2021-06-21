@@ -1,6 +1,5 @@
 package com.xsw.neo.service.handler;
 
-import com.xxl.job.core.biz.model.ReturnT;
 import com.xxl.job.core.handler.annotation.XxlJob;
 import org.springframework.stereotype.Component;
 
@@ -11,9 +10,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class XxlJobDemoHandler {
 
-    @XxlJob(value = "demoJobHandler")
-    public ReturnT<String> demoJobHandler(String param) {
-        System.out.println(param);
-        return ReturnT.SUCCESS;
+    @XxlJob(value = "demo")
+    public void demoJobHandler() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println("当前：" + i);
+        }
     }
 }
