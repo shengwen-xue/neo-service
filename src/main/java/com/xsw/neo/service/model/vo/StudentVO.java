@@ -13,6 +13,8 @@ import java.io.Serializable;
  * @since 2021/3/4 11:29
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @ApiModel
 public class StudentVO implements Serializable {
 
