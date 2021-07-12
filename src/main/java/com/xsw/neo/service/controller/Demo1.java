@@ -60,5 +60,11 @@ public class Demo1 {
         Map<String, StudentVO> nameAndStudentVO2 = studentList.stream().collect(
                 Collectors.toMap(StudentVO::getName, studentVO -> studentVO, (k1, k2) -> k2));
         Console.log(nameAndStudentVO2);
+
+        // 集合转map
+        // 拓展：要是存在相同的key, 按照创建时间倒序，就取k1，按照创建时间升序，就取k2
+        Map<String, String> nameAndAddr = studentList.stream().collect(
+                Collectors.toMap(StudentVO::getName, StudentVO::getAddr, (k1, k2) -> k2));
+        Console.log(nameAndAddr);
     }
 }
