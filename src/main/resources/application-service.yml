@@ -6,3 +6,11 @@ mqtt:
   addr: 127.0.0.1
   projectName: api-name
   url: http://${mqtt.addr}.${mqtt.projectName}/
+
+
+
+# 当多个配置地址 需要在代码中多次 @Value(${})很麻烦  现在写一个配置类
+service:
+  logUrl: http://10.0.0.1:8080/service/logUrl
+  loginUrl: http://10.0.0.1:8080/service/loginUrl
+  logOutUrl: http://10.0.0.1:8080/service/logoutUrl
