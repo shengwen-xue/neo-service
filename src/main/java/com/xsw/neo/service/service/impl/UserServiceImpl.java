@@ -3,19 +3,20 @@ package com.xsw.neo.service.service.impl;
 import com.xsw.neo.service.common.enums.BusinessEnum;
 import com.xsw.neo.service.common.exception.CommonException;
 import com.xsw.neo.service.mapper.UserMapper;
+import com.xsw.neo.service.model.dto.UserDTO;
 import com.xsw.neo.service.model.entity.User;
 import com.xsw.neo.service.model.entity.UserExample;
 import com.xsw.neo.service.model.param.UserQueryParam;
 import com.xsw.neo.service.service.UserService;
 import com.xsw.neo.service.utils.PhoneNumberUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -58,11 +59,18 @@ public class UserServiceImpl implements UserService {
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public Integer saveUser(User user) {
-        User dbUser = userMapper.selectByPrimaryKey(user.getId());
-        if (Objects.nonNull(dbUser)) {
-            throw new CommonException(false, BusinessEnum.CANNOT_INSERT_THE_SAME_ID.getMessage());
+    public Integer saveUser(UserDTO userDTO) {
+
+        UserExample userExample = new UserExample();
+        userExample.createCriteria().andUsernameEqualTo(userDTO.getUsername());
+        List<User> users = userMapper.selectByExample(userExample);
+        if (CollectionUtils.isNotEmpty(users)) {
+            throw new CommonException(false, BusinessEnum.ALREADY_EXISTS.getMessage());
         }
+        User user = new User();
+        user.setUsername(userDTO.getUsername());
+        user.setPassword(userDTO.getPassword());
+        user.setTel(userDTO.getTel());
         return userMapper.insertSelective(user);
     }
 }

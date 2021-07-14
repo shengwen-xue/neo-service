@@ -1,6 +1,7 @@
 package com.xsw.neo.service.controller;
 
 import com.xsw.neo.service.common.result.ResultBody;
+import com.xsw.neo.service.model.dto.StudentDTO;
 import com.xsw.neo.service.model.entity.Student;
 import com.xsw.neo.service.service.StudentService;
 import io.swagger.annotations.Api;
@@ -33,8 +34,8 @@ public class StudentController {
 
     @ApiOperation(value = "新增学生")
     @PostMapping(value = "/saveStudent")
-    public ResultBody saveStudent(@RequestBody Student student) {
-        return ResultBody.SUCCESS(studentService.saveStudent(student));
+    public ResultBody saveStudent(@RequestBody StudentDTO studentDTO) {
+        return ResultBody.SUCCESS(studentService.saveStudent(studentDTO));
     }
 
     @ApiOperation(value = "获取学生信息")

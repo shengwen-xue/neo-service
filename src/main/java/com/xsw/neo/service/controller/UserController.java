@@ -1,7 +1,7 @@
 package com.xsw.neo.service.controller;
 
 import com.xsw.neo.service.common.result.ResultBody;
-import com.xsw.neo.service.model.entity.User;
+import com.xsw.neo.service.model.dto.UserDTO;
 import com.xsw.neo.service.model.param.UserQueryParam;
 import com.xsw.neo.service.service.UserService;
 import io.swagger.annotations.Api;
@@ -34,7 +34,7 @@ public class UserController {
 
     @ApiOperation(value = "新增用户")
     @PostMapping(value = "/saveUser")
-    public ResultBody saveUser(@RequestBody User user) {
-        return ResultBody.SUCCESS(userService.saveUser(user));
+    public ResultBody saveUser(@RequestBody UserDTO userDTO) {
+        return ResultBody.SUCCESS(userService.saveUser(userDTO));
     }
 }

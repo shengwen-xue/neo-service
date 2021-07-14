@@ -1,5 +1,6 @@
 package com.xsw.neo.service.service;
 
+import com.xsw.neo.service.model.dto.UserDTO;
 import com.xsw.neo.service.model.entity.User;
 import com.xsw.neo.service.model.param.UserQueryParam;
 
@@ -23,8 +24,8 @@ public interface UserService {
     /**
      * 新增用户
      *
-     * @param user 用户
+     * @param userDTO 用户
      * @return 影响行数
      */
-    Integer saveUser(User user);
+    Integer saveUser(UserDTO userDTO);
 }

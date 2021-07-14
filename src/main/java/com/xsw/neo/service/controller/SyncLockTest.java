@@ -4,7 +4,7 @@ package com.xsw.neo.service.controller;
  * @author xueshengwen
  * @since 2021/6/9 9:46
  */
-public class SyncTest {
+public class SyncLockTest {
 
     private Integer count = 0;
 
@@ -22,13 +22,13 @@ public class SyncTest {
     }
 
     public static void main(String[] args) {
-        SyncTest syncTest = new SyncTest();
+        SyncLockTest syncLockTest = new SyncLockTest();
 
         // 线程1
         Thread thread1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                syncTest.syncTest(Thread.currentThread());
+                syncLockTest.syncTest(Thread.currentThread());
             }
         });
 
@@ -36,7 +36,7 @@ public class SyncTest {
         Thread thread2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                syncTest.syncTest(Thread.currentThread());
+                syncLockTest.syncTest(Thread.currentThread());
             }
         });
 

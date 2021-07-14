@@ -1,5 +1,6 @@
 package com.xsw.neo.service.service;
 
+import com.xsw.neo.service.model.dto.StudentDTO;
 import com.xsw.neo.service.model.entity.Student;
 
 import java.util.List;
@@ -22,10 +23,10 @@ public interface StudentService {
     /**
      * 新增学生
      *
-     * @param student 学生
+     * @param studentDTO 学生
      * @return 影响对象
      */
-    Integer saveStudent(Student student);
+    Integer saveStudent(StudentDTO studentDTO);
 
     /**
      * 获取学生信息
