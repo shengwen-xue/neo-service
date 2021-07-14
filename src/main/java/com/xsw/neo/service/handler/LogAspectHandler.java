@@ -11,6 +11,8 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 
 /**
+ * 日志切面类
+ *
  * @author xueshengwen
  * @since 2021/7/13 16:19
  */

@@ -10,7 +10,7 @@ import com.xsw.neo.service.common.exception.IException;
  */
 public enum BusinessEnum implements IException {
 
-    CANNOT_INSERT_THE_SAME_ID(10001, "不能插入相同的ID"),
+    ALREADY_EXISTS(10001, "已存在"),
 
     NOT_FOUND_STUDENT(10002, "未查询到该学生"),
 

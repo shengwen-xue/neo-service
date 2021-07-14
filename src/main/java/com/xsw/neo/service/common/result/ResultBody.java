@@ -1,15 +1,11 @@
 package com.xsw.neo.service.common.result;
 
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class ResultBody<T> implements Serializable {
     /**
      * 标识位
@@ -25,10 +21,26 @@ public class ResultBody<T> implements Serializable {
     private T data;
 
     public static <T> ResultBody<T> SUCCESS(T data) {
-        return new ResultBody(true, "success", data);
+        ResultBody resultBody = new ResultBody();
+        resultBody.setFlag(true);
+        resultBody.setMessage("SUCCESS");
+        resultBody.setData(data);
+        return resultBody;
+    }
+
+    public static <T> ResultBody<T> SUCCESS() {
+        ResultBody resultBody = new ResultBody();
+        resultBody.setFlag(true);
+        resultBody.setMessage("SUCCESS");
+        resultBody.setData("");
+        return resultBody;
     }
 
     public static <T> ResultBody<T> FAIL(String message) {
-        return new ResultBody(false, message, null);
+        ResultBody resultBody = new ResultBody();
+        resultBody.setFlag(false);
+        resultBody.setMessage("FAIL");
+        resultBody.setData("");
+        return resultBody;
     }
 }
