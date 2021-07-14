@@ -29,6 +29,9 @@ public class SwaggerConfig {
                 .select()
                 // 这里采用包含注解的方式来确定要显示的接口
                 // .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                // 指定要生成api接口的包路径，这里把controller作为包路径，生成controller中的所有接口
+                // .apis(RequestHandlerSelectors.basePackage("com.sw.neo.service.controller")
+                // 表示任何都可以
                 .apis(RequestHandlerSelectors.any())
                 // 这里采用包扫描的方式来确定要显示的接口
                 // .apis(RequestHandlerSelectors.basePackage("com.xsw.activitiapi.controller"))

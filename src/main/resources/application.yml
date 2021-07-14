@@ -10,9 +10,9 @@ spring:
 mybatis:
   type-aliases-package: com.xsw.neo.service.model.entity
   mapper-locations: classpath*:com/xsw/neo/service/mapper/xml/*.xml
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 logging:
   config: classpath:log4j2.xml
-#  level:
-#    com.xsw.neo.service.mapper: trace
+  level:
+    com.xsw.neo.service.mapper: trace

@@ -10,7 +10,7 @@
         <!--输出日志的格式-->
         <property name="pattern">%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %class{-1}.%M()/%L - %msg%xEx%n</property>
         <!--日志保存路径-->
-        <property name="log_path">C:/stock/logs</property>
+        <property name="log_path">D:/neo-service/logs</property>
         <!--日志级别-->
         <property name="level">info</property>
     </properties>
