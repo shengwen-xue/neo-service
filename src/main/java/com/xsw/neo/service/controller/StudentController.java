@@ -39,7 +39,7 @@ public class StudentController {
     }
 
     @ApiOperation(value = "获取学生信息")
-    @PostMapping(value = "/findStudentInfo")
+    @GetMapping(value = "/findStudentInfo")
     public ResultBody findStudentInfo(@RequestParam(value = "id") Integer id) {
         return ResultBody.SUCCESS(studentService.findStudentInfo(id));
     }

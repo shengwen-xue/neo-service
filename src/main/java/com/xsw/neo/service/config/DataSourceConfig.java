@@ -23,17 +23,16 @@ public class DataSourceConfig {
     @Autowired
     private DataSource2Properties dataSource2Properties;
 
-    @Bean(name = "dataSource1")
-
-    public DataSource dataSource1() {
-        log.info("dataSource1初始化....");
-        HikariDataSource dataSource = new HikariDataSource();
-        dataSource.setJdbcUrl(dataSource1Properties.getUrl());
-        dataSource.setUsername(dataSource1Properties.getUsername());
-        dataSource.setPassword(dataSource1Properties.getPassword());
-        dataSource.setDriverClassName(dataSource1Properties.getDriverClassName());
-        return dataSource;
-    }
+//    @Bean(name = "dataSource1")
+//    public DataSource dataSource1() {
+//        log.info("dataSource1初始化....");
+//        HikariDataSource dataSource = new HikariDataSource();
+//        dataSource.setJdbcUrl(dataSource1Properties.getUrl());
+//        dataSource.setUsername(dataSource1Properties.getUsername());
+//        dataSource.setPassword(dataSource1Properties.getPassword());
+//        dataSource.setDriverClassName(dataSource1Properties.getDriverClassName());
+//        return dataSource;
+//    }
 
     @Bean(name = "dataSource2")
     @Primary

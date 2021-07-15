@@ -1,14 +1,22 @@
-package com.xsw.neo.service.controller;
+package com.xsw.neo.service.utils;
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author xueshengwen
- * @since 2021/6/9 9:46
+ * @since 2021/6/8 15:03
  */
-public class SyncLockTest {
+public class LockTest {
 
-    private Integer count = 0;
+    private Lock lock = new ReentrantLock();
 
-    public synchronized void syncTest(Thread thread) {
+    private int count = 0;
+
+    public void test(Thread thread) {
+        // 获取锁
+        lock.lock();
+
         try {
             System.out.println("thread name:" + thread.getName() + "获取了锁。");
             System.out.println("thread name:" + thread.getName() + "操作的count=" + count);
@@ -18,17 +26,19 @@ public class SyncLockTest {
         } finally {
             System.out.println("thread name:" + thread.getName() + "操作后的count=" + count);
             System.out.println("thread name:" + thread.getName() + "释放了锁。");
+            lock.unlock();
         }
     }
 
     public static void main(String[] args) {
-        SyncLockTest syncLockTest = new SyncLockTest();
+
+        LockTest lockTest = new LockTest();
 
         // 线程1
         Thread thread1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                syncLockTest.syncTest(Thread.currentThread());
+                lockTest.test(Thread.currentThread());
             }
         });
 
@@ -36,11 +46,23 @@ public class SyncLockTest {
         Thread thread2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                syncLockTest.syncTest(Thread.currentThread());
+                lockTest.test(Thread.currentThread());
+            }
+        });
+
+        // 线程3
+        Thread thread3 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                lockTest.test(Thread.currentThread());
             }
         });
 
         thread1.start();
         thread2.start();
+        thread3.start();
     }
 }
+
+
+

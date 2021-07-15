@@ -20,6 +20,14 @@ public class ResultBody<T> implements Serializable {
      */
     private T data;
 
+    public static <T> ResultBody<T> SUCCESS(T data, String message) {
+        ResultBody resultBody = new ResultBody();
+        resultBody.setFlag(true);
+        resultBody.setMessage(message);
+        resultBody.setData(data);
+        return resultBody;
+    }
+
     public static <T> ResultBody<T> SUCCESS(T data) {
         ResultBody resultBody = new ResultBody();
         resultBody.setFlag(true);
@@ -39,7 +47,7 @@ public class ResultBody<T> implements Serializable {
     public static <T> ResultBody<T> FAIL(String message) {
         ResultBody resultBody = new ResultBody();
         resultBody.setFlag(false);
-        resultBody.setMessage("FAIL");
+        resultBody.setMessage(message);
         resultBody.setData("");
         return resultBody;
     }

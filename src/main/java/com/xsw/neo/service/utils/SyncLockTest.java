@@ -1,22 +1,14 @@
-package com.xsw.neo.service.controller;
-
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
+package com.xsw.neo.service.utils;
 
 /**
  * @author xueshengwen
- * @since 2021/6/8 15:03
+ * @since 2021/6/9 9:46
  */
-public class LockTest {
+public class SyncLockTest {
 
-    private Lock lock = new ReentrantLock();
+    private Integer count = 0;
 
-    private int count = 0;
-
-    public void test(Thread thread) {
-        // 获取锁
-        lock.lock();
-
+    public synchronized void syncTest(Thread thread) {
         try {
             System.out.println("thread name:" + thread.getName() + "获取了锁。");
             System.out.println("thread name:" + thread.getName() + "操作的count=" + count);
@@ -26,19 +18,17 @@ public class LockTest {
         } finally {
             System.out.println("thread name:" + thread.getName() + "操作后的count=" + count);
             System.out.println("thread name:" + thread.getName() + "释放了锁。");
-            lock.unlock();
         }
     }
 
     public static void main(String[] args) {
-
-        LockTest lockTest = new LockTest();
+        SyncLockTest syncLockTest = new SyncLockTest();
 
         // 线程1
         Thread thread1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                lockTest.test(Thread.currentThread());
+                syncLockTest.syncTest(Thread.currentThread());
             }
         });
 
@@ -46,23 +36,11 @@ public class LockTest {
         Thread thread2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                lockTest.test(Thread.currentThread());
-            }
-        });
-
-        // 线程3
-        Thread thread3 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                lockTest.test(Thread.currentThread());
+                syncLockTest.syncTest(Thread.currentThread());
             }
         });
 
         thread1.start();
         thread2.start();
-        thread3.start();
     }
 }
-
-
-

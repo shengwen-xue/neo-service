@@ -1,4 +1,4 @@
-package com.xsw.neo.service.controller;
+package com.xsw.neo.service.utils;
 
 import cn.hutool.core.lang.Console;
 import com.google.common.collect.Lists;

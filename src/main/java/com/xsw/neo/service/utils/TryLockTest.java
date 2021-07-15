@@ -1,4 +1,4 @@
-package com.xsw.neo.service.controller;
+package com.xsw.neo.service.utils;
 
 import lombok.SneakyThrows;
 
