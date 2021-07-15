@@ -59,7 +59,7 @@ public class LogAspectHandler {
         // 获取即将执行的方法名
         String methodName = signature.getName();
 
-        log.info("即将执行的方法：{}，该方法属于包：{}", methodName, declaringTypeName);
+        log.info("即将执行的方法: {}, 该方法属于包: {}", methodName, declaringTypeName);
 
         // 获取请求的URL和IP地址
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
@@ -69,7 +69,7 @@ public class LogAspectHandler {
         String url = request.getRequestURI();
         // 获取请求的IP地址
         String ip = request.getRemoteAddr();
-        log.info("用户请求的Url：{}，IP地址：{}", url, ip);
+        log.info("用户请求的Url: {}, IP地址: {}", url, ip);
     }
 
     /**
@@ -83,7 +83,7 @@ public class LogAspectHandler {
         // 获取签名
         Signature signature = joinPoint.getSignature();
         String methodName = signature.getName();
-        log.info("请求的方法：{} 已结束", methodName);
+        log.info("请求的方法: {} 已结束", methodName);
     }
 
 
@@ -100,7 +100,7 @@ public class LogAspectHandler {
         // 获取执行的方法名
         String methodName = signature.getName();
 
-        log.info("请求的方法：{} 已结束，返回值：{}", methodName, result);
+        log.info("请求的方法: {} 已结束, 返回值: {}", methodName, result);
     }
 
     /**
@@ -116,6 +116,6 @@ public class LogAspectHandler {
         // 获取执行的方法名
         String methodName = signature.getName();
 
-        log.info("请求的方法：{} 已结束，异常为：{}", methodName, throwable);
+        log.info("请求的方法: {} 已结束, 异常为: {}", methodName, throwable);
     }
 }
