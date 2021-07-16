@@ -12,7 +12,7 @@ public enum BusinessEnum implements IException {
 
     ALREADY_EXISTS(10001, "已存在"),
 
-    NOT_FOUND_STUDENT(10002, "未查询到该学生"),
+    NOT_FOUND(10002, "没有找到"),
 
     PASSWORD_ERROR(10003, "密码错误"),
 
