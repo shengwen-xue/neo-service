@@ -3,7 +3,7 @@ package com.xsw.neo.service.controller;
 import cn.hutool.captcha.CaptchaUtil;
 import cn.hutool.captcha.LineCaptcha;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,12 +19,12 @@ public class PageController {
 
     private final static String SESSION_KEY_IMAGE_CODE = "SESSION_KEY_IMAGE_CODE";
 
-    @GetMapping(value = "/")
-    public String index() {
-        return "index";
+    @RequestMapping(value = "/login")
+    public String login(){
+        return "login";
     }
 
-    @GetMapping("/code/image")
+    @RequestMapping("/code/image")
     public void createCode(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // 设置response响应
         response.setCharacterEncoding("UTF-8");

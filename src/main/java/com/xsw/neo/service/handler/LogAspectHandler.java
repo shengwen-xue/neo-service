@@ -35,7 +35,7 @@ public class LogAspectHandler {
     }
 
     /**
-     * 第二种方式：通过注解实现使用该注解才执行切面
+     * 第二种方式：通过注解实现使用该注解才执行切面  表示使用该注解的都要进行切面
      */
 //    @Pointcut(value = "@annotation(org.springframework.web.bind.annotation.GetMapping)")
 //    public void annotationCut(){
@@ -82,8 +82,9 @@ public class LogAspectHandler {
         log.info("开始执行after方法");
         // 获取签名
         Signature signature = joinPoint.getSignature();
+        String declaringTypeName = signature.getDeclaringTypeName();
         String methodName = signature.getName();
-        log.info("请求的方法: {} 已结束", methodName);
+        log.info("请求的方法: {} 属于包: {} 已结束", methodName, declaringTypeName);
     }
 
 
