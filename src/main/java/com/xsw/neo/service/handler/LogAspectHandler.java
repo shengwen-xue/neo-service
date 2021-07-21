@@ -1,5 +1,6 @@
 package com.xsw.neo.service.handler;
 
+import com.xsw.neo.service.model.bo.StudentBO;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;
@@ -31,7 +32,6 @@ public class LogAspectHandler {
      */
     @Pointcut(value = "execution(* com.xsw.neo.service.controller..*.*(..))")
     public void pointCut() {
-
     }
 
     /**
@@ -40,6 +40,13 @@ public class LogAspectHandler {
 //    @Pointcut(value = "@annotation(org.springframework.web.bind.annotation.GetMapping)")
 //    public void annotationCut(){
 //
+//    }
+
+    /**
+     * 通过aop切面实现自定义注解的切面输出
+     */
+//    @Pointcut(value = "@annotation(com.xsw.neo.service.common.annotation.LogAnnotation)")
+//    public void pointCut() {
 //    }
 
     /**
