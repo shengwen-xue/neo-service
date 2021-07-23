@@ -4,7 +4,6 @@ import com.xsw.neo.service.model.entity.Permission;
 import com.xsw.neo.service.model.entity.Person;
 import com.xsw.neo.service.model.entity.Role;
 import com.xsw.neo.service.service.PermissionService;
-import com.xsw.neo.service.service.PersonRoleService;
 import com.xsw.neo.service.service.PersonService;
 import com.xsw.neo.service.service.RoleService;
 import org.apache.shiro.SecurityUtils;
@@ -25,6 +24,7 @@ import java.util.stream.Collectors;
 
 /**
  * 自定义realm
+ *
  * @author xueshengwen
  * @since 2021/7/16 13:45
  */
