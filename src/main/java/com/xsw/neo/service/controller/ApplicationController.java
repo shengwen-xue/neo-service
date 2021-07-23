@@ -33,6 +33,9 @@ public class ApplicationController {
     @Value(value = "${service.logOutUrl}")
     public String logOutUrl;
 
+    @Autowired
+    private ApplicationConfig applicationConfig;
+
     @GetMapping(value = "/getApplication")
     @ApiOperation(value = "获取自定义配置文件的配置方式一")
     public ResultBody getApplication() {
@@ -42,9 +45,6 @@ public class ApplicationController {
         map.put("logOutUrl", logOutUrl);
         return ResultBody.SUCCESS(map);
     }
-
-    @Autowired
-    private ApplicationConfig applicationConfig;
 
     @GetMapping(value = "/application")
     @ApiOperation(value = "获取自定义配置文件的配置方式二")
