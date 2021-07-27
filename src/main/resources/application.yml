@@ -7,21 +7,20 @@ spring:
   profiles:
     active: dev,service
 
-  freemarker:
-    check-template-location: true
-    cache: false
-    suffix: .ftl
-    settings:
-      template_update_delay: 0
-    template-loader-path: classpath:/templates/
-    charset: UTF-8
-    content-type: text/html
-    expose-session-attributes: true
-    expose-request-attributes: true
-    request-context-attribute: request
+#  freemarker:
+#    check-template-location: true
+#    cache: false
+#    suffix: .ftl
+#    settings:
+#      template_update_delay: 0
+#    template-loader-path: classpath:/templates/
+#    charset: UTF-8
+#    content-type: text/html
+#    expose-session-attributes: true
+#    expose-request-attributes: true
+#    request-context-attribute: request
 
-  #关闭缓存 Thymeleaf 默认是开启页面缓存的 需要关闭这个页面缓存 否则会有缓存，导致页面没法及时看到更新后的效果
-
+#关闭缓存 Thymeleaf 默认是开启页面缓存的 需要关闭这个页面缓存 否则会有缓存，导致页面没法及时看到更新后的效果
 #  thymeleaf:
 #    cache: false
 #    prefix: classpath:/templates

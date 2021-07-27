@@ -7,10 +7,7 @@ import com.xsw.neo.service.service.PermissionService;
 import com.xsw.neo.service.service.PersonService;
 import com.xsw.neo.service.service.RoleService;
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.authc.SimpleAuthenticationInfo;
+import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
@@ -77,17 +74,20 @@ public class MyRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
 
         // 根据token获取用户名
-        String username = (String) authenticationToken.getPrincipal();
+        // String username = (String) authenticationToken.getPrincipal();
+        UsernamePasswordToken usernamePasswordToken = (UsernamePasswordToken) authenticationToken;
 
-        Person person = personService.findPersonByName(username);
+        Person person = personService.findPersonByName(usernamePasswordToken.getUsername());
+
 
         if (Objects.nonNull(person)) {
+
             // 把当前用户存到session中
             SecurityUtils.getSubject().getSession().setAttribute("person", person);
 
             // 传入用户名和密码进行身份认证，并返回认证信息
             AuthenticationInfo authenticationInfo =
-                    new SimpleAuthenticationInfo(person.getUsername(), person.getPassword(), "myRealm");
+                    new SimpleAuthenticationInfo(person.getUsername(), person.getPassword(), "");
             return authenticationInfo;
         }
         return null;
