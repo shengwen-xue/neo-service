@@ -7,6 +7,12 @@ spring:
   profiles:
     active: dev,service
 
+# elasticsearch 配置
+  data:
+    elasticsearch:
+      cluster-name: my-application
+      cluster-nodes: localhost:9300
+
 #  freemarker:
 #    check-template-location: true
 #    cache: false
