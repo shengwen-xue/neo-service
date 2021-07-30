@@ -39,11 +39,8 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table schema="" tableName="tb_person" domainObjectName="Person"></table>
-        <table schema="" tableName="tb_role" domainObjectName="Role"></table>
-        <table schema="" tableName="tb_permission" domainObjectName="Permission"></table>
-        <table schema="" tableName="tb_person_role" domainObjectName="PersonRole"></table>
-        <table schema="" tableName="tb_role_permission" domainObjectName="RolePermission"></table>
+        <table schema="" tableName="tb_device" domainObjectName="Device"></table>
+
 
     </context>
 </generatorConfiguration>
