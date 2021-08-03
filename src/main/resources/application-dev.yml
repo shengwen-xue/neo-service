@@ -24,7 +24,7 @@ spring:
 #        use-global-data-source-stat: true
 
     datasource2:
-      url: jdbc:mysql://localhost:3306/datasource2?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true
+      url: jdbc:mysql://localhost:3306/datasource2?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true
       username: root
       password: 123456
       driver-class-name: com.mysql.cj.jdbc.Driver
