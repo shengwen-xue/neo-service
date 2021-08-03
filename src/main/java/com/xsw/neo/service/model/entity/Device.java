@@ -19,9 +19,9 @@ public class Device {
 
     private Date fixDate;
 
-    private Byte status;
+    private Integer status;
 
-    private Byte isDeleted;
+    private Integer isDeleted;
 
     private String area;
 
@@ -31,11 +31,11 @@ public class Device {
 
     private Date uptime;
 
-    private String updata;
+    private String upData;
 
     private Date alarmDate;
 
-    private Byte isAlarm;
+    private Integer isAlarm;
 
     private String alarmData;
 
@@ -107,19 +107,19 @@ public class Device {
         this.fixDate = fixDate;
     }
 
-    public Byte getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Byte status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
-    public Byte getIsDeleted() {
+    public Integer getIsDeleted() {
         return isDeleted;
     }
 
-    public void setIsDeleted(Byte isDeleted) {
+    public void setIsDeleted(Integer isDeleted) {
         this.isDeleted = isDeleted;
     }
 
@@ -155,12 +155,12 @@ public class Device {
         this.uptime = uptime;
     }
 
-    public String getUpdata() {
-        return updata;
+    public String getUpData() {
+        return upData;
     }
 
-    public void setUpdata(String updata) {
-        this.updata = updata == null ? null : updata.trim();
+    public void setUpData(String upData) {
+        this.upData = upData == null ? null : upData.trim();
     }
 
     public Date getAlarmDate() {
@@ -171,11 +171,11 @@ public class Device {
         this.alarmDate = alarmDate;
     }
 
-    public Byte getIsAlarm() {
+    public Integer getIsAlarm() {
         return isAlarm;
     }
 
-    public void setIsAlarm(Byte isAlarm) {
+    public void setIsAlarm(Integer isAlarm) {
         this.isAlarm = isAlarm;
     }
 

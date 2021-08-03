@@ -2,8 +2,9 @@ package com.xsw.neo.service.mapper;
 
 import com.xsw.neo.service.model.entity.Device;
 import com.xsw.neo.service.model.entity.DeviceExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface DeviceMapper {
     long countByExample(DeviceExample example);
@@ -27,4 +28,6 @@ public interface DeviceMapper {
     int updateByPrimaryKeySelective(Device record);
 
     int updateByPrimaryKey(Device record);
+
+    Integer batchSave(@Param("items") List<Device> devices);
 }

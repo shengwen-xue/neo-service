@@ -1,448 +1,466 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xsw.neo.service.mapper.DeviceMapper">
-  <resultMap id="BaseResultMap" type="com.xsw.neo.service.model.entity.Device">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="code" jdbcType="VARCHAR" property="code" />
-    <result column="address" jdbcType="VARCHAR" property="address" />
-    <result column="check_user" jdbcType="VARCHAR" property="checkUser" />
-    <result column="check_date" jdbcType="TIMESTAMP" property="checkDate" />
-    <result column="fix_user" jdbcType="VARCHAR" property="fixUser" />
-    <result column="fix_date" jdbcType="TIMESTAMP" property="fixDate" />
-    <result column="status" jdbcType="TINYINT" property="status" />
-    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
-    <result column="area" jdbcType="VARCHAR" property="area" />
-    <result column="floor" jdbcType="VARCHAR" property="floor" />
-    <result column="unit" jdbcType="VARCHAR" property="unit" />
-    <result column="uptime" jdbcType="TIMESTAMP" property="uptime" />
-    <result column="updata" jdbcType="VARCHAR" property="updata" />
-    <result column="alarm_date" jdbcType="TIMESTAMP" property="alarmDate" />
-    <result column="is_alarm" jdbcType="TINYINT" property="isAlarm" />
-    <result column="alarm_data" jdbcType="VARCHAR" property="alarmData" />
-    <result column="alarm_value" jdbcType="INTEGER" property="alarmValue" />
-    <result column="alarm_message" jdbcType="VARCHAR" property="alarmMessage" />
-  </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
+    <resultMap id="BaseResultMap" type="com.xsw.neo.service.model.entity.Device">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="code" jdbcType="VARCHAR" property="code"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="check_user" jdbcType="VARCHAR" property="checkUser"/>
+        <result column="check_date" jdbcType="TIMESTAMP" property="checkDate"/>
+        <result column="fix_user" jdbcType="VARCHAR" property="fixUser"/>
+        <result column="fix_date" jdbcType="TIMESTAMP" property="fixDate"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="is_deleted" jdbcType="INTEGER" property="isDeleted"/>
+        <result column="area" jdbcType="VARCHAR" property="area"/>
+        <result column="floor" jdbcType="VARCHAR" property="floor"/>
+        <result column="unit" jdbcType="VARCHAR" property="unit"/>
+        <result column="uptime" jdbcType="TIMESTAMP" property="uptime"/>
+        <result column="up_data" jdbcType="VARCHAR" property="upData"/>
+        <result column="alarm_date" jdbcType="TIMESTAMP" property="alarmDate"/>
+        <result column="is_alarm" jdbcType="INTEGER" property="isAlarm"/>
+        <result column="alarm_data" jdbcType="VARCHAR" property="alarmData"/>
+        <result column="alarm_value" jdbcType="INTEGER" property="alarmValue"/>
+        <result column="alarm_message" jdbcType="VARCHAR" property="alarmMessage"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
             </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause">
-    <where>
-      <foreach collection="example.oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
             </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Base_Column_List">
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
     id, name, code, address, check_user, check_date, fix_user, fix_date, status, is_deleted, 
-    area, floor, unit, uptime, updata, alarm_date, is_alarm, alarm_data, alarm_value, 
+    area, floor, unit, uptime, up_data, alarm_date, is_alarm, alarm_data, alarm_value, 
     alarm_message
   </sql>
-  <select id="selectByExample" parameterType="com.xsw.neo.service.model.entity.DeviceExample" resultMap="BaseResultMap">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from tb_device
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from tb_device
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <select id="selectByExample" parameterType="com.xsw.neo.service.model.entity.DeviceExample"
+            resultMap="BaseResultMap">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from tb_device
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from tb_device
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from tb_device
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.xsw.neo.service.model.entity.DeviceExample">
-    delete from tb_device
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </delete>
-  <insert id="insert" parameterType="com.xsw.neo.service.model.entity.Device">
+    <delete id="deleteByExample" parameterType="com.xsw.neo.service.model.entity.DeviceExample">
+        delete from tb_device
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.xsw.neo.service.model.entity.Device">
     insert into tb_device (id, name, code, 
       address, check_user, check_date, 
       fix_user, fix_date, status, 
       is_deleted, area, floor, 
-      unit, uptime, updata, 
+      unit, uptime, up_data, 
       alarm_date, is_alarm, alarm_data, 
       alarm_value, alarm_message)
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
       #{address,jdbcType=VARCHAR}, #{checkUser,jdbcType=VARCHAR}, #{checkDate,jdbcType=TIMESTAMP}, 
-      #{fixUser,jdbcType=VARCHAR}, #{fixDate,jdbcType=TIMESTAMP}, #{status,jdbcType=TINYINT}, 
-      #{isDeleted,jdbcType=TINYINT}, #{area,jdbcType=VARCHAR}, #{floor,jdbcType=VARCHAR}, 
-      #{unit,jdbcType=VARCHAR}, #{uptime,jdbcType=TIMESTAMP}, #{updata,jdbcType=VARCHAR}, 
-      #{alarmDate,jdbcType=TIMESTAMP}, #{isAlarm,jdbcType=TINYINT}, #{alarmData,jdbcType=VARCHAR}, 
+      #{fixUser,jdbcType=VARCHAR}, #{fixDate,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, 
+      #{isDeleted,jdbcType=INTEGER}, #{area,jdbcType=VARCHAR}, #{floor,jdbcType=VARCHAR}, 
+      #{unit,jdbcType=VARCHAR}, #{uptime,jdbcType=TIMESTAMP}, #{upData,jdbcType=VARCHAR}, 
+      #{alarmDate,jdbcType=TIMESTAMP}, #{isAlarm,jdbcType=INTEGER}, #{alarmData,jdbcType=VARCHAR}, 
       #{alarmValue,jdbcType=INTEGER}, #{alarmMessage,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.xsw.neo.service.model.entity.Device">
-    insert into tb_device
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="name != null">
-        name,
-      </if>
-      <if test="code != null">
-        code,
-      </if>
-      <if test="address != null">
-        address,
-      </if>
-      <if test="checkUser != null">
-        check_user,
-      </if>
-      <if test="checkDate != null">
-        check_date,
-      </if>
-      <if test="fixUser != null">
-        fix_user,
-      </if>
-      <if test="fixDate != null">
-        fix_date,
-      </if>
-      <if test="status != null">
-        status,
-      </if>
-      <if test="isDeleted != null">
-        is_deleted,
-      </if>
-      <if test="area != null">
-        area,
-      </if>
-      <if test="floor != null">
-        floor,
-      </if>
-      <if test="unit != null">
-        unit,
-      </if>
-      <if test="uptime != null">
-        uptime,
-      </if>
-      <if test="updata != null">
-        updata,
-      </if>
-      <if test="alarmDate != null">
-        alarm_date,
-      </if>
-      <if test="isAlarm != null">
-        is_alarm,
-      </if>
-      <if test="alarmData != null">
-        alarm_data,
-      </if>
-      <if test="alarmValue != null">
-        alarm_value,
-      </if>
-      <if test="alarmMessage != null">
-        alarm_message,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=BIGINT},
-      </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="code != null">
-        #{code,jdbcType=VARCHAR},
-      </if>
-      <if test="address != null">
-        #{address,jdbcType=VARCHAR},
-      </if>
-      <if test="checkUser != null">
-        #{checkUser,jdbcType=VARCHAR},
-      </if>
-      <if test="checkDate != null">
-        #{checkDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="fixUser != null">
-        #{fixUser,jdbcType=VARCHAR},
-      </if>
-      <if test="fixDate != null">
-        #{fixDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="status != null">
-        #{status,jdbcType=TINYINT},
-      </if>
-      <if test="isDeleted != null">
-        #{isDeleted,jdbcType=TINYINT},
-      </if>
-      <if test="area != null">
-        #{area,jdbcType=VARCHAR},
-      </if>
-      <if test="floor != null">
-        #{floor,jdbcType=VARCHAR},
-      </if>
-      <if test="unit != null">
-        #{unit,jdbcType=VARCHAR},
-      </if>
-      <if test="uptime != null">
-        #{uptime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updata != null">
-        #{updata,jdbcType=VARCHAR},
-      </if>
-      <if test="alarmDate != null">
-        #{alarmDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="isAlarm != null">
-        #{isAlarm,jdbcType=TINYINT},
-      </if>
-      <if test="alarmData != null">
-        #{alarmData,jdbcType=VARCHAR},
-      </if>
-      <if test="alarmValue != null">
-        #{alarmValue,jdbcType=INTEGER},
-      </if>
-      <if test="alarmMessage != null">
-        #{alarmMessage,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <select id="countByExample" parameterType="com.xsw.neo.service.model.entity.DeviceExample" resultType="java.lang.Long">
-    select count(*) from tb_device
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByExampleSelective" parameterType="map">
-    update tb_device
-    <set>
-      <if test="record.id != null">
-        id = #{record.id,jdbcType=BIGINT},
-      </if>
-      <if test="record.name != null">
+    <insert id="insertSelective" parameterType="com.xsw.neo.service.model.entity.Device">
+        insert into tb_device
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="code != null">
+                code,
+            </if>
+            <if test="address != null">
+                address,
+            </if>
+            <if test="checkUser != null">
+                check_user,
+            </if>
+            <if test="checkDate != null">
+                check_date,
+            </if>
+            <if test="fixUser != null">
+                fix_user,
+            </if>
+            <if test="fixDate != null">
+                fix_date,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="isDeleted != null">
+                is_deleted,
+            </if>
+            <if test="area != null">
+                area,
+            </if>
+            <if test="floor != null">
+                floor,
+            </if>
+            <if test="unit != null">
+                unit,
+            </if>
+            <if test="uptime != null">
+                uptime,
+            </if>
+            <if test="upData != null">
+                up_data,
+            </if>
+            <if test="alarmDate != null">
+                alarm_date,
+            </if>
+            <if test="isAlarm != null">
+                is_alarm,
+            </if>
+            <if test="alarmData != null">
+                alarm_data,
+            </if>
+            <if test="alarmValue != null">
+                alarm_value,
+            </if>
+            <if test="alarmMessage != null">
+                alarm_message,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="code != null">
+                #{code,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null">
+                #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="checkUser != null">
+                #{checkUser,jdbcType=VARCHAR},
+            </if>
+            <if test="checkDate != null">
+                #{checkDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="fixUser != null">
+                #{fixUser,jdbcType=VARCHAR},
+            </if>
+            <if test="fixDate != null">
+                #{fixDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="isDeleted != null">
+                #{isDeleted,jdbcType=INTEGER},
+            </if>
+            <if test="area != null">
+                #{area,jdbcType=VARCHAR},
+            </if>
+            <if test="floor != null">
+                #{floor,jdbcType=VARCHAR},
+            </if>
+            <if test="unit != null">
+                #{unit,jdbcType=VARCHAR},
+            </if>
+            <if test="uptime != null">
+                #{uptime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="upData != null">
+                #{upData,jdbcType=VARCHAR},
+            </if>
+            <if test="alarmDate != null">
+                #{alarmDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="isAlarm != null">
+                #{isAlarm,jdbcType=INTEGER},
+            </if>
+            <if test="alarmData != null">
+                #{alarmData,jdbcType=VARCHAR},
+            </if>
+            <if test="alarmValue != null">
+                #{alarmValue,jdbcType=INTEGER},
+            </if>
+            <if test="alarmMessage != null">
+                #{alarmMessage,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.xsw.neo.service.model.entity.DeviceExample"
+            resultType="java.lang.Long">
+        select count(*) from tb_device
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update tb_device
+        <set>
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=BIGINT},
+            </if>
+            <if test="record.name != null">
+                name = #{record.name,jdbcType=VARCHAR},
+            </if>
+            <if test="record.code != null">
+                code = #{record.code,jdbcType=VARCHAR},
+            </if>
+            <if test="record.address != null">
+                address = #{record.address,jdbcType=VARCHAR},
+            </if>
+            <if test="record.checkUser != null">
+                check_user = #{record.checkUser,jdbcType=VARCHAR},
+            </if>
+            <if test="record.checkDate != null">
+                check_date = #{record.checkDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.fixUser != null">
+                fix_user = #{record.fixUser,jdbcType=VARCHAR},
+            </if>
+            <if test="record.fixDate != null">
+                fix_date = #{record.fixDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.status != null">
+                status = #{record.status,jdbcType=INTEGER},
+            </if>
+            <if test="record.isDeleted != null">
+                is_deleted = #{record.isDeleted,jdbcType=INTEGER},
+            </if>
+            <if test="record.area != null">
+                area = #{record.area,jdbcType=VARCHAR},
+            </if>
+            <if test="record.floor != null">
+                floor = #{record.floor,jdbcType=VARCHAR},
+            </if>
+            <if test="record.unit != null">
+                unit = #{record.unit,jdbcType=VARCHAR},
+            </if>
+            <if test="record.uptime != null">
+                uptime = #{record.uptime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.upData != null">
+                up_data = #{record.upData,jdbcType=VARCHAR},
+            </if>
+            <if test="record.alarmDate != null">
+                alarm_date = #{record.alarmDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.isAlarm != null">
+                is_alarm = #{record.isAlarm,jdbcType=INTEGER},
+            </if>
+            <if test="record.alarmData != null">
+                alarm_data = #{record.alarmData,jdbcType=VARCHAR},
+            </if>
+            <if test="record.alarmValue != null">
+                alarm_value = #{record.alarmValue,jdbcType=INTEGER},
+            </if>
+            <if test="record.alarmMessage != null">
+                alarm_message = #{record.alarmMessage,jdbcType=VARCHAR},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update tb_device
+        set id = #{record.id,jdbcType=BIGINT},
         name = #{record.name,jdbcType=VARCHAR},
-      </if>
-      <if test="record.code != null">
         code = #{record.code,jdbcType=VARCHAR},
-      </if>
-      <if test="record.address != null">
         address = #{record.address,jdbcType=VARCHAR},
-      </if>
-      <if test="record.checkUser != null">
         check_user = #{record.checkUser,jdbcType=VARCHAR},
-      </if>
-      <if test="record.checkDate != null">
         check_date = #{record.checkDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.fixUser != null">
         fix_user = #{record.fixUser,jdbcType=VARCHAR},
-      </if>
-      <if test="record.fixDate != null">
         fix_date = #{record.fixDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.status != null">
-        status = #{record.status,jdbcType=TINYINT},
-      </if>
-      <if test="record.isDeleted != null">
-        is_deleted = #{record.isDeleted,jdbcType=TINYINT},
-      </if>
-      <if test="record.area != null">
+        status = #{record.status,jdbcType=INTEGER},
+        is_deleted = #{record.isDeleted,jdbcType=INTEGER},
         area = #{record.area,jdbcType=VARCHAR},
-      </if>
-      <if test="record.floor != null">
         floor = #{record.floor,jdbcType=VARCHAR},
-      </if>
-      <if test="record.unit != null">
         unit = #{record.unit,jdbcType=VARCHAR},
-      </if>
-      <if test="record.uptime != null">
         uptime = #{record.uptime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.updata != null">
-        updata = #{record.updata,jdbcType=VARCHAR},
-      </if>
-      <if test="record.alarmDate != null">
+        up_data = #{record.upData,jdbcType=VARCHAR},
         alarm_date = #{record.alarmDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.isAlarm != null">
-        is_alarm = #{record.isAlarm,jdbcType=TINYINT},
-      </if>
-      <if test="record.alarmData != null">
+        is_alarm = #{record.isAlarm,jdbcType=INTEGER},
         alarm_data = #{record.alarmData,jdbcType=VARCHAR},
-      </if>
-      <if test="record.alarmValue != null">
         alarm_value = #{record.alarmValue,jdbcType=INTEGER},
-      </if>
-      <if test="record.alarmMessage != null">
-        alarm_message = #{record.alarmMessage,jdbcType=VARCHAR},
-      </if>
-    </set>
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map">
-    update tb_device
-    set id = #{record.id,jdbcType=BIGINT},
-      name = #{record.name,jdbcType=VARCHAR},
-      code = #{record.code,jdbcType=VARCHAR},
-      address = #{record.address,jdbcType=VARCHAR},
-      check_user = #{record.checkUser,jdbcType=VARCHAR},
-      check_date = #{record.checkDate,jdbcType=TIMESTAMP},
-      fix_user = #{record.fixUser,jdbcType=VARCHAR},
-      fix_date = #{record.fixDate,jdbcType=TIMESTAMP},
-      status = #{record.status,jdbcType=TINYINT},
-      is_deleted = #{record.isDeleted,jdbcType=TINYINT},
-      area = #{record.area,jdbcType=VARCHAR},
-      floor = #{record.floor,jdbcType=VARCHAR},
-      unit = #{record.unit,jdbcType=VARCHAR},
-      uptime = #{record.uptime,jdbcType=TIMESTAMP},
-      updata = #{record.updata,jdbcType=VARCHAR},
-      alarm_date = #{record.alarmDate,jdbcType=TIMESTAMP},
-      is_alarm = #{record.isAlarm,jdbcType=TINYINT},
-      alarm_data = #{record.alarmData,jdbcType=VARCHAR},
-      alarm_value = #{record.alarmValue,jdbcType=INTEGER},
-      alarm_message = #{record.alarmMessage,jdbcType=VARCHAR}
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xsw.neo.service.model.entity.Device">
-    update tb_device
-    <set>
-      <if test="name != null">
-        name = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="code != null">
-        code = #{code,jdbcType=VARCHAR},
-      </if>
-      <if test="address != null">
-        address = #{address,jdbcType=VARCHAR},
-      </if>
-      <if test="checkUser != null">
-        check_user = #{checkUser,jdbcType=VARCHAR},
-      </if>
-      <if test="checkDate != null">
-        check_date = #{checkDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="fixUser != null">
-        fix_user = #{fixUser,jdbcType=VARCHAR},
-      </if>
-      <if test="fixDate != null">
-        fix_date = #{fixDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="status != null">
-        status = #{status,jdbcType=TINYINT},
-      </if>
-      <if test="isDeleted != null">
-        is_deleted = #{isDeleted,jdbcType=TINYINT},
-      </if>
-      <if test="area != null">
-        area = #{area,jdbcType=VARCHAR},
-      </if>
-      <if test="floor != null">
-        floor = #{floor,jdbcType=VARCHAR},
-      </if>
-      <if test="unit != null">
-        unit = #{unit,jdbcType=VARCHAR},
-      </if>
-      <if test="uptime != null">
-        uptime = #{uptime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updata != null">
-        updata = #{updata,jdbcType=VARCHAR},
-      </if>
-      <if test="alarmDate != null">
-        alarm_date = #{alarmDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="isAlarm != null">
-        is_alarm = #{isAlarm,jdbcType=TINYINT},
-      </if>
-      <if test="alarmData != null">
-        alarm_data = #{alarmData,jdbcType=VARCHAR},
-      </if>
-      <if test="alarmValue != null">
-        alarm_value = #{alarmValue,jdbcType=INTEGER},
-      </if>
-      <if test="alarmMessage != null">
-        alarm_message = #{alarmMessage,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.xsw.neo.service.model.entity.Device">
-    update tb_device
-    set name = #{name,jdbcType=VARCHAR},
-      code = #{code,jdbcType=VARCHAR},
-      address = #{address,jdbcType=VARCHAR},
-      check_user = #{checkUser,jdbcType=VARCHAR},
-      check_date = #{checkDate,jdbcType=TIMESTAMP},
-      fix_user = #{fixUser,jdbcType=VARCHAR},
-      fix_date = #{fixDate,jdbcType=TIMESTAMP},
-      status = #{status,jdbcType=TINYINT},
-      is_deleted = #{isDeleted,jdbcType=TINYINT},
-      area = #{area,jdbcType=VARCHAR},
-      floor = #{floor,jdbcType=VARCHAR},
-      unit = #{unit,jdbcType=VARCHAR},
-      uptime = #{uptime,jdbcType=TIMESTAMP},
-      updata = #{updata,jdbcType=VARCHAR},
-      alarm_date = #{alarmDate,jdbcType=TIMESTAMP},
-      is_alarm = #{isAlarm,jdbcType=TINYINT},
-      alarm_data = #{alarmData,jdbcType=VARCHAR},
-      alarm_value = #{alarmValue,jdbcType=INTEGER},
-      alarm_message = #{alarmMessage,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
+        alarm_message = #{record.alarmMessage,jdbcType=VARCHAR}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.xsw.neo.service.model.entity.Device">
+        update tb_device
+        <set>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="code != null">
+                code = #{code,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null">
+                address = #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="checkUser != null">
+                check_user = #{checkUser,jdbcType=VARCHAR},
+            </if>
+            <if test="checkDate != null">
+                check_date = #{checkDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="fixUser != null">
+                fix_user = #{fixUser,jdbcType=VARCHAR},
+            </if>
+            <if test="fixDate != null">
+                fix_date = #{fixDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="isDeleted != null">
+                is_deleted = #{isDeleted,jdbcType=INTEGER},
+            </if>
+            <if test="area != null">
+                area = #{area,jdbcType=VARCHAR},
+            </if>
+            <if test="floor != null">
+                floor = #{floor,jdbcType=VARCHAR},
+            </if>
+            <if test="unit != null">
+                unit = #{unit,jdbcType=VARCHAR},
+            </if>
+            <if test="uptime != null">
+                uptime = #{uptime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="upData != null">
+                up_data = #{upData,jdbcType=VARCHAR},
+            </if>
+            <if test="alarmDate != null">
+                alarm_date = #{alarmDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="isAlarm != null">
+                is_alarm = #{isAlarm,jdbcType=INTEGER},
+            </if>
+            <if test="alarmData != null">
+                alarm_data = #{alarmData,jdbcType=VARCHAR},
+            </if>
+            <if test="alarmValue != null">
+                alarm_value = #{alarmValue,jdbcType=INTEGER},
+            </if>
+            <if test="alarmMessage != null">
+                alarm_message = #{alarmMessage,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.xsw.neo.service.model.entity.Device">
+        update tb_device
+        set name = #{name,jdbcType=VARCHAR},
+          code = #{code,jdbcType=VARCHAR},
+          address = #{address,jdbcType=VARCHAR},
+          check_user = #{checkUser,jdbcType=VARCHAR},
+          check_date = #{checkDate,jdbcType=TIMESTAMP},
+          fix_user = #{fixUser,jdbcType=VARCHAR},
+          fix_date = #{fixDate,jdbcType=TIMESTAMP},
+          status = #{status,jdbcType=INTEGER},
+          is_deleted = #{isDeleted,jdbcType=INTEGER},
+          area = #{area,jdbcType=VARCHAR},
+          floor = #{floor,jdbcType=VARCHAR},
+          unit = #{unit,jdbcType=VARCHAR},
+          uptime = #{uptime,jdbcType=TIMESTAMP},
+          up_data = #{upData,jdbcType=VARCHAR},
+          alarm_date = #{alarmDate,jdbcType=TIMESTAMP},
+          is_alarm = #{isAlarm,jdbcType=INTEGER},
+          alarm_data = #{alarmData,jdbcType=VARCHAR},
+          alarm_value = #{alarmValue,jdbcType=INTEGER},
+          alarm_message = #{alarmMessage,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <insert id="batchSave" parameterType="com.xsw.neo.service.model.entity.Device">
+        INSERT INTO `tb_device`
+        (`name`, `code`, `address`, `check_user`, `check_date`, `fix_user`, `fix_date`,
+        `status`, `is_deleted`, `area`, `floor`, `unit`, `uptime`, `up_data`, `alarm_date`,
+        `is_alarm`, `alarm_data`, `alarm_value`, `alarm_message`)
+        VALUES
+        <foreach collection="items" index="index" separator="," item="device">
+            (#{device.name}, #{device.code}, #{device.address}, #{device.checkUser}, #{device.checkDate},
+            #{device.fixUser}, #{device.fixDate}, #{device.status}, #{device.isDeleted}, #{device.area},
+            #{device.floor}, #{device.unit}, #{device.uptime}, #{device.upData}, #{device.alarmDate},
+            #{device.isAlarm}, #{device.alarmData}, #{device.alarmValue}, #{device.alarmMessage})
+        </foreach>
+    </insert>
 </mapper>

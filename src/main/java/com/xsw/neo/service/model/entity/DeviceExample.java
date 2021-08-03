@@ -645,52 +645,52 @@ public class DeviceExample {
             return (Criteria) this;
         }
 
-        public Criteria andStatusEqualTo(Byte value) {
+        public Criteria andStatusEqualTo(Integer value) {
             addCriterion("status =", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotEqualTo(Byte value) {
+        public Criteria andStatusNotEqualTo(Integer value) {
             addCriterion("status <>", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThan(Byte value) {
+        public Criteria andStatusGreaterThan(Integer value) {
             addCriterion("status >", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThanOrEqualTo(Byte value) {
+        public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
             addCriterion("status >=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThan(Byte value) {
+        public Criteria andStatusLessThan(Integer value) {
             addCriterion("status <", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThanOrEqualTo(Byte value) {
+        public Criteria andStatusLessThanOrEqualTo(Integer value) {
             addCriterion("status <=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusIn(List<Byte> values) {
+        public Criteria andStatusIn(List<Integer> values) {
             addCriterion("status in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotIn(List<Byte> values) {
+        public Criteria andStatusNotIn(List<Integer> values) {
             addCriterion("status not in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusBetween(Byte value1, Byte value2) {
+        public Criteria andStatusBetween(Integer value1, Integer value2) {
             addCriterion("status between", value1, value2, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotBetween(Byte value1, Byte value2) {
+        public Criteria andStatusNotBetween(Integer value1, Integer value2) {
             addCriterion("status not between", value1, value2, "status");
             return (Criteria) this;
         }
@@ -705,52 +705,52 @@ public class DeviceExample {
             return (Criteria) this;
         }
 
-        public Criteria andIsDeletedEqualTo(Byte value) {
+        public Criteria andIsDeletedEqualTo(Integer value) {
             addCriterion("is_deleted =", value, "isDeleted");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeletedNotEqualTo(Byte value) {
+        public Criteria andIsDeletedNotEqualTo(Integer value) {
             addCriterion("is_deleted <>", value, "isDeleted");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeletedGreaterThan(Byte value) {
+        public Criteria andIsDeletedGreaterThan(Integer value) {
             addCriterion("is_deleted >", value, "isDeleted");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeletedGreaterThanOrEqualTo(Byte value) {
+        public Criteria andIsDeletedGreaterThanOrEqualTo(Integer value) {
             addCriterion("is_deleted >=", value, "isDeleted");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeletedLessThan(Byte value) {
+        public Criteria andIsDeletedLessThan(Integer value) {
             addCriterion("is_deleted <", value, "isDeleted");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeletedLessThanOrEqualTo(Byte value) {
+        public Criteria andIsDeletedLessThanOrEqualTo(Integer value) {
             addCriterion("is_deleted <=", value, "isDeleted");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeletedIn(List<Byte> values) {
+        public Criteria andIsDeletedIn(List<Integer> values) {
             addCriterion("is_deleted in", values, "isDeleted");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeletedNotIn(List<Byte> values) {
+        public Criteria andIsDeletedNotIn(List<Integer> values) {
             addCriterion("is_deleted not in", values, "isDeleted");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeletedBetween(Byte value1, Byte value2) {
+        public Criteria andIsDeletedBetween(Integer value1, Integer value2) {
             addCriterion("is_deleted between", value1, value2, "isDeleted");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeletedNotBetween(Byte value1, Byte value2) {
+        public Criteria andIsDeletedNotBetween(Integer value1, Integer value2) {
             addCriterion("is_deleted not between", value1, value2, "isDeleted");
             return (Criteria) this;
         }
@@ -1025,73 +1025,73 @@ public class DeviceExample {
             return (Criteria) this;
         }
 
-        public Criteria andUpdataIsNull() {
-            addCriterion("updata is null");
+        public Criteria andUpDataIsNull() {
+            addCriterion("up_data is null");
             return (Criteria) this;
         }
 
-        public Criteria andUpdataIsNotNull() {
-            addCriterion("updata is not null");
+        public Criteria andUpDataIsNotNull() {
+            addCriterion("up_data is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUpdataEqualTo(String value) {
-            addCriterion("updata =", value, "updata");
+        public Criteria andUpDataEqualTo(String value) {
+            addCriterion("up_data =", value, "upData");
             return (Criteria) this;
         }
 
-        public Criteria andUpdataNotEqualTo(String value) {
-            addCriterion("updata <>", value, "updata");
+        public Criteria andUpDataNotEqualTo(String value) {
+            addCriterion("up_data <>", value, "upData");
             return (Criteria) this;
         }
 
-        public Criteria andUpdataGreaterThan(String value) {
-            addCriterion("updata >", value, "updata");
+        public Criteria andUpDataGreaterThan(String value) {
+            addCriterion("up_data >", value, "upData");
             return (Criteria) this;
         }
 
-        public Criteria andUpdataGreaterThanOrEqualTo(String value) {
-            addCriterion("updata >=", value, "updata");
+        public Criteria andUpDataGreaterThanOrEqualTo(String value) {
+            addCriterion("up_data >=", value, "upData");
             return (Criteria) this;
         }
 
-        public Criteria andUpdataLessThan(String value) {
-            addCriterion("updata <", value, "updata");
+        public Criteria andUpDataLessThan(String value) {
+            addCriterion("up_data <", value, "upData");
             return (Criteria) this;
         }
 
-        public Criteria andUpdataLessThanOrEqualTo(String value) {
-            addCriterion("updata <=", value, "updata");
+        public Criteria andUpDataLessThanOrEqualTo(String value) {
+            addCriterion("up_data <=", value, "upData");
             return (Criteria) this;
         }
 
-        public Criteria andUpdataLike(String value) {
-            addCriterion("updata like", value, "updata");
+        public Criteria andUpDataLike(String value) {
+            addCriterion("up_data like", value, "upData");
             return (Criteria) this;
         }
 
-        public Criteria andUpdataNotLike(String value) {
-            addCriterion("updata not like", value, "updata");
+        public Criteria andUpDataNotLike(String value) {
+            addCriterion("up_data not like", value, "upData");
             return (Criteria) this;
         }
 
-        public Criteria andUpdataIn(List<String> values) {
-            addCriterion("updata in", values, "updata");
+        public Criteria andUpDataIn(List<String> values) {
+            addCriterion("up_data in", values, "upData");
             return (Criteria) this;
         }
 
-        public Criteria andUpdataNotIn(List<String> values) {
-            addCriterion("updata not in", values, "updata");
+        public Criteria andUpDataNotIn(List<String> values) {
+            addCriterion("up_data not in", values, "upData");
             return (Criteria) this;
         }
 
-        public Criteria andUpdataBetween(String value1, String value2) {
-            addCriterion("updata between", value1, value2, "updata");
+        public Criteria andUpDataBetween(String value1, String value2) {
+            addCriterion("up_data between", value1, value2, "upData");
             return (Criteria) this;
         }
 
-        public Criteria andUpdataNotBetween(String value1, String value2) {
-            addCriterion("updata not between", value1, value2, "updata");
+        public Criteria andUpDataNotBetween(String value1, String value2) {
+            addCriterion("up_data not between", value1, value2, "upData");
             return (Criteria) this;
         }
 
@@ -1165,52 +1165,52 @@ public class DeviceExample {
             return (Criteria) this;
         }
 
-        public Criteria andIsAlarmEqualTo(Byte value) {
+        public Criteria andIsAlarmEqualTo(Integer value) {
             addCriterion("is_alarm =", value, "isAlarm");
             return (Criteria) this;
         }
 
-        public Criteria andIsAlarmNotEqualTo(Byte value) {
+        public Criteria andIsAlarmNotEqualTo(Integer value) {
             addCriterion("is_alarm <>", value, "isAlarm");
             return (Criteria) this;
         }
 
-        public Criteria andIsAlarmGreaterThan(Byte value) {
+        public Criteria andIsAlarmGreaterThan(Integer value) {
             addCriterion("is_alarm >", value, "isAlarm");
             return (Criteria) this;
         }
 
-        public Criteria andIsAlarmGreaterThanOrEqualTo(Byte value) {
+        public Criteria andIsAlarmGreaterThanOrEqualTo(Integer value) {
             addCriterion("is_alarm >=", value, "isAlarm");
             return (Criteria) this;
         }
 
-        public Criteria andIsAlarmLessThan(Byte value) {
+        public Criteria andIsAlarmLessThan(Integer value) {
             addCriterion("is_alarm <", value, "isAlarm");
             return (Criteria) this;
         }
 
-        public Criteria andIsAlarmLessThanOrEqualTo(Byte value) {
+        public Criteria andIsAlarmLessThanOrEqualTo(Integer value) {
             addCriterion("is_alarm <=", value, "isAlarm");
             return (Criteria) this;
         }
 
-        public Criteria andIsAlarmIn(List<Byte> values) {
+        public Criteria andIsAlarmIn(List<Integer> values) {
             addCriterion("is_alarm in", values, "isAlarm");
             return (Criteria) this;
         }
 
-        public Criteria andIsAlarmNotIn(List<Byte> values) {
+        public Criteria andIsAlarmNotIn(List<Integer> values) {
             addCriterion("is_alarm not in", values, "isAlarm");
             return (Criteria) this;
         }
 
-        public Criteria andIsAlarmBetween(Byte value1, Byte value2) {
+        public Criteria andIsAlarmBetween(Integer value1, Integer value2) {
             addCriterion("is_alarm between", value1, value2, "isAlarm");
             return (Criteria) this;
         }
 
-        public Criteria andIsAlarmNotBetween(Byte value1, Byte value2) {
+        public Criteria andIsAlarmNotBetween(Integer value1, Integer value2) {
             addCriterion("is_alarm not between", value1, value2, "isAlarm");
             return (Criteria) this;
         }
