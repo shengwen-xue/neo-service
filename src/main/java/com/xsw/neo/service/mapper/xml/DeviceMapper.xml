@@ -463,4 +463,13 @@
             #{device.isAlarm}, #{device.alarmData}, #{device.alarmValue}, #{device.alarmMessage})
         </foreach>
     </insert>
+
+    <select id="listDevice" resultType="com.xsw.neo.service.model.entity.Device">
+        select <include refid="Base_Column_List"/> from tb_device
+        LIMIT #{pageNum}, #{pageSize}
+    </select>
+
+    <select id="count" resultType="java.lang.Integer">
+        select count(0) from tb_device
+    </select>
 </mapper>

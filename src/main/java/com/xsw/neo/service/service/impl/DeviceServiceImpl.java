@@ -1,6 +1,8 @@
 package com.xsw.neo.service.service.impl;
 
+import com.github.pagehelper.PageInfo;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.xsw.neo.service.mapper.DeviceMapper;
 import com.xsw.neo.service.model.entity.Device;
 import com.xsw.neo.service.service.DeviceService;
@@ -11,7 +13,9 @@ import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author xueshengwen
@@ -72,6 +76,24 @@ public class DeviceServiceImpl implements DeviceService {
         long endTime = System.currentTimeMillis();
         log.info("耗时：{}分钟", (endTime - startTime) / 1000000);
         return count;
+    }
+
+    @Override
+    public Map<String, Object> listDevice(int pageNum, int pageSize) {
+        long startTime = System.currentTimeMillis();
+        Map<String, Object> map = Maps.newHashMap();
+
+//        PageHelper.startPage(pageNum, pageSize);
+//        List<Device> devices = deviceMapper.selectByExample(null);
+//        PageInfo<Device> devicePageInfo = new PageInfo<>(devices);
+
+        List<Device> devices = deviceMapper.listDevice(pageNum, pageSize);
+        int count = deviceMapper.count();
+        map.put("devices", devices);
+        map.put("count", count);
+        long endTime = System.currentTimeMillis();
+        System.out.println("耗时：" + ((endTime - startTime) / 1000) + "秒");
+        return map;
     }
 
     private String generateCode() {

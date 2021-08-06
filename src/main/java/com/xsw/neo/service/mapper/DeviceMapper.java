@@ -30,4 +30,8 @@ public interface DeviceMapper {
     int updateByPrimaryKey(Device record);
 
     Integer batchSave(@Param("items") List<Device> devices);
+
+    List<Device> listDevice(@Param(value = "pageNum") int pageNum, @Param(value = "pageSize") int pageSize);
+
+    int count();
 }
