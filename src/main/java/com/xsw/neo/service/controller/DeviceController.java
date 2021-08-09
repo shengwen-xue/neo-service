@@ -37,4 +37,13 @@ public class DeviceController {
                                  @ApiParam(value = "页大小", name = "pageSize", required = true) int pageSize) {
         return ResultBody.SUCCESS(deviceService.listDevice(pageNum, pageSize));
     }
+
+    @ApiOperation(value = "逻辑分页设备列表")
+    @GetMapping(value = "/logicListDevice")
+    public ResultBody logicListDevice(@RequestParam(value = "pageNum", required = false)
+                                 @ApiParam(value = "起始页", name = "pageNum", required = true) int pageNum,
+                                 @RequestParam(value = "pageSize", required = false)
+                                 @ApiParam(value = "页大小", name = "pageSize", required = true) int pageSize) {
+        return ResultBody.SUCCESS(deviceService.logicListDevice(pageNum, pageSize));
+    }
 }
