@@ -1,6 +1,5 @@
 package com.xsw.neo.service.handler;
 
-import com.xsw.neo.service.model.bo.StudentBO;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;
