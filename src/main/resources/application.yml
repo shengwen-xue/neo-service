@@ -46,3 +46,15 @@ logging:
   config: classpath:log4j2.xml
   level:
     com.xsw.neo.service.mapper: trace
+
+keycloak:
+  realm: aden
+  auth-server-url: http://localhost:8080/auth
+  resource: MyClient
+  public-client: true
+  security-constraints:
+    - auth-roles:
+        - manager
+      security-collections:
+        - patterns:
+            - '/foo/bar'
