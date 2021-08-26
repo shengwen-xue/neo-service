@@ -16,7 +16,7 @@ public class StringJoinDemo {
         StringJoiner stringJoiner = new StringJoiner("-");
         stringJoiner.add("111").add("222").add("333");
 
-        String collect = Arrays.asList("aaa", "bbb", "ccc").stream().map(String::valueOf).collect(Collectors.joining("-"));
+        String collect = Arrays.asList("aaa", "bbb", "ccc").stream().collect(Collectors.joining("-"));
 
         String join = Joiner.on("|").join(Arrays.asList("xxx", "yyy", "zzz"));
 
