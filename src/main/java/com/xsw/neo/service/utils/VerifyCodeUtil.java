@@ -21,7 +21,7 @@ public class VerifyCodeUtil {
     public static String[] generate() {
         Random random = new Random();
         int type = random.nextInt(2);
-        int[] arr = new int[]{random.nextInt(50), random.nextInt(50), Integer.MAX_VALUE};
+        int[] arr = new int[]{random.nextInt(10), random.nextInt(10), Integer.MAX_VALUE};
         switch (type) {
             case SUB:  // 不出现负数
                 if (arr[0] < arr[1]) {
@@ -44,12 +44,10 @@ public class VerifyCodeUtil {
     }
 
     public static void main(String[] args) {
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 50; i++) {
             String[] s = generate();
             System.out.println("verify code：" + s[0]);
             System.out.println("answer：" + s[1]);
         }
-
     }
-
 }

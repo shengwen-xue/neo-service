@@ -20,7 +20,7 @@ public class PageController {
     private final static String SESSION_KEY_IMAGE_CODE = "SESSION_KEY_IMAGE_CODE";
 
     @RequestMapping(value = "/login")
-    public String login(){
+    public String login() {
         return "login";
     }
 
